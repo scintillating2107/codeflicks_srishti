@@ -22,5 +22,5 @@ SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
 1 | Srishti Singh | Student | CSE | Rajkiya Engineering College Kannauj | srishti2107singh@gmail.com
 2 | Manya Gupta | Student | CSE | Rajkiya Engineering College Kannauj | manyagupta9140@gmail.com
-2 | Himanshi Sharma | Student | EL | Rajkiya Engineering College Kannauj | himanshisharma2405@gmail.com
-2 | Prakhar Mishra | Student | CSE | Rajkiya Engineering College Kannauj | mishraprakhar3030@gmail.com
+3 | Himanshi Sharma | Student | EL | Rajkiya Engineering College Kannauj | himanshisharma2405@gmail.com
+4 | Prakhar Mishra | Student | CSE | Rajkiya Engineering College Kannauj | mishraprakhar3030@gmail.com
