@@ -1,13 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipe Flow Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-		<!-- Your code goes here-->
+    <div class="container">
+        <header>
+            <h1>Pipe Flow Simulator</h1>
+            <p class="subtitle">Interactive visualization of fluid dynamics in a horizontal pipe</p>
+        </header>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+        <main>
+            <section class="simulation-section">
+                <div class="card simulation-container">
+                    <h2>Flow Visualization</h2>
+                    <canvas id="pipeCanvas"></canvas>
+                    <div id="pressureReadings">
+                        <div class="pressure-gauge" id="pressure1">
+                            <i class="ti ti-gauge"></i>
+                            P1: <span>0</span> Pa
+                            <div class="tooltip">Inlet pressure measurement point</div>
+                        </div>
+                        <div class="pressure-gauge" id="pressure2">
+                            <i class="ti ti-gauge"></i>
+                            P2: <span>0</span> Pa
+                            <div class="tooltip">Outlet pressure measurement point</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="two-column">
+                <section class="input-section">
+                    <div class="card">
+                        <h2>Input Parameters</h2>
+                        <div class="controls">
+                            <div class="input-group">
+                                <label for="pipeLength">
+                                    Pipe Length (L)
+                                    <i class="ti ti-help-circle" data-tooltip="The total length of the pipe in meters"></i>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="pipeLength" min="1" max="10" step="0.1" value="5" />
+                                    <span class="unit-label">m</span>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="pipeDiameter">
+                                    Pipe Diameter (D)
+                                    <i class="ti ti-help-circle" data-tooltip="Internal diameter of the pipe in meters"></i>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="pipeDiameter" min="0.01" max="0.1" step="0.01" value="0.05" />
+                                    <span class="unit-label">m</span>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="flowRate">
+                                    Flow Rate (Q)
+                                    <i class="ti ti-help-circle" data-tooltip="Volume of fluid passing through the pipe per second"></i>
+                                </label>
+                                <input type="range" id="flowRate" min="0" max="2" step="0.1" value="1" />
+                                <div class="value-display">
+                                    <span id="flowRateValue">1.0</span>
+                                    <span class="unit-label">L/s</span>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="fluid">
+                                    Fluid Type
+                                    <i class="ti ti-help-circle" data-tooltip="Select the type of fluid for simulation"></i>
+                                </label>
+                                <select id="fluid">
+                                    <option value="water">Water</option>
+                                    <option value="glycerin">Glycerin</option>
+                                    <option value="oil">Oil</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="results-section">
+                    <div class="card">
+                        <h2>Results</h2>
+                        <div class="results">
+                            <div class="result-item">
+                                <label>
+                                    Flow Velocity
+                                    <i class="ti ti-help-circle" data-tooltip="Average velocity of fluid in the pipe"></i>
+                                </label>
+                                <div class="result-value">
+                                    <span id="velocity" class="animate-value">0</span>
+                                    <span class="unit-label">m/s</span>
+                                </div>
+                            </div>
+                            <div class="result-item">
+                                <label>
+                                    Head Loss
+                                    <i class="ti ti-help-circle" data-tooltip="Energy loss due to friction"></i>
+                                </label>
+                                <div class="result-value">
+                                    <span id="headLoss" class="animate-value">0</span>
+                                    <span class="unit-label">m</span>
+                                </div>
+                            </div>
+                            <div class="result-item">
+                                <label>
+                                    Friction Factor
+                                    <i class="ti ti-help-circle" data-tooltip="Darcy-Weisbach friction factor"></i>
+                                </label>
+                                <div class="result-value">
+                                    <span id="frictionFactor" class="animate-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="graph-section">
+                <div class="card">
+                    <h2>Head Loss vs Flow Velocity</h2>
+                    <div class="graph-container">
+                        <canvas id="headLossGraph"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Created for educational purposes. Values are simulated using the Darcy-Weisbach equation.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="simulation.js"></script>
 </body>
-</html>
+</html> 
