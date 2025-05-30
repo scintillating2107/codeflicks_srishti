@@ -3,6 +3,7 @@
 
 A V-notch weir is a triangular-shaped notch used to measure the flow of water in open channels. It is preferred for small discharge measurements because of its high sensitivity to small changes in flow.
 
+
 ~~ Flow Equation:
 
 The theoretical discharge 
@@ -25,6 +26,8 @@ Where:
 For a 90° V-notch, the formula simplifies to:
 
 Q = 1.38*Cd*H^5/2
+
+
  
 ~~ Discharge Coefficient 
 (
@@ -35,6 +38,8 @@ Accounts for energy losses and non-ideal flow behavior
 Typically ranges from 0.58 to 0.62 for a 90° V-notch
 
 Can be determined experimentally by comparing actual and theoretical discharge
+
+
 
 ~~ Head Measurement (H):
 
