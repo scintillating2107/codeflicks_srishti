@@ -15,36 +15,70 @@
 
 
 <h4> [1. Focus Area](#LO)
-    1. Understanding Fluid Flow in Open Channels
-The experiment applies principles of open channel flow, including:
-The continuity equation (mass conservation)
-Bernoulli’s principle (energy conservation)
-Hydrostatics to determine the head (height) of water above the notch
-It demonstrates how flow in open channels is influenced by gravity, surface shape, and fluid properties.
-2. Flow Measurement Using Weirs
-A V-notch weir is a sharp-crested triangular notch that allows for precise flow measurement, especially at low flow rates. The discharge (flow rate) is related to the head using the formula:
-                                                  Q=158​Cd2gtan(2θ)H 5/2
+  1. Objective
+To measure and calculate the flow rate of water using a V-notch weir.
+
+To understand the relationship between head (height of water above notch) and flow rate.
+
+2. Principle
+Based on the application of Bernoulli’s equation and flow measurement through an open channel using a triangular (V-notch) weir.
+
+The discharge through a V-notch is a function of the head over the notch.
+
+3. Key Concepts
+Open channel flow
+
+Hydraulics of weirs
+
+Discharge coefficient (Cd)
+
+Empirical discharge equation for V-notch weirs
+
+4. Formula Used
+Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
 Where:
-Cd is the discharge coefficient, 
-θ is the notch angle, and 
-H is the head.
-3. Calibration and Empirical Validation
-The experiment includes:
-Measuring the water level above the notch
-Calculating theoretical and actual discharge
-Determining the coefficient of discharge (Cd) by comparing measured flow to theoretical values
-4. Engineering Applications
-The V-notch method is used in:
-Irrigation systems
-Wastewater treatment plants
-Hydrological studies
-It provides accurate, low-cost flow measurement for environmental and civil engineering applications.
-5. Learning and Analysis
-The experiment helps students and engineers:
-Understand fluid behavior in real systems
-Learn to use hydraulic structures for measurement
-Conduct error analysis (e.g., due to parallax, surface tension, flow turbulence)
-Interpret data and plot flow vs. head relationships
+
+
+Q = Discharge (m³/s)
+
+𝐶𝑑
+​
+  = Coefficient of discharge
+
+𝑔
+= Acceleration due to gravity (9.81 m/s²)
+
+𝜃
+= Angle of the V-notch
+
+𝐻
+= Head of water above the notch crest (m)
+
+5. Apparatus
+V-notch weir tank setup
+
+Measuring scale
+
+Stopwatch (if measuring over time)
+
+Collection tank (optional, for volumetric validation)
+
+6. Experimental Procedure (Brief)
+Set up the V-notch weir in the channel.
+
+Allow water to flow and reach a steady state.
+
+Measure the head 
+𝐻
+above the notch.
+
+Calculate theoretical discharge using the formula.
+
+Optionally, compare with actual discharge using volumetric method.
+
+7. Applications
+Used in irrigation channels, wastewater treatment plants, and hydrology studies for accurate flow measurement.
+
 
 <h4> [2. Learning Objectives ](#LO)
 1. 🔬 Understanding Open Channel Flow Principles
