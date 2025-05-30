@@ -125,7 +125,7 @@
    Ensure proper calibration and maintenance of equipment for accurate results.
 
 
-<h4> [1. Instructional Strategy](#IS)
+<h4> [3. Instructional Strategy](#IS)
 
   1. Objectives
      Understand the working principle of a V-notch weir.
