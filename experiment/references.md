@@ -1,50 +1,36 @@
 ### Link your references in here
-References for V-Notch Flow Rate Experiment
-Books:
+1. Applied Fluid Mechanics Lab Manual – University of Texas at Arlington
+This manual provides detailed experimental procedures, data collection tables, and calculation methods for both V-notch and rectangular notch weirs. It includes steps for measuring water surface elevation, calculating discharge, and determining the coefficient of discharge (Cd) for each notch type.
 
-Fluid Mechanics and Hydraulic Machines by R.K. Bansal
+🔗 Experiment #9: Flow Over Weirs – Applied Fluid Mechanics Lab Manual
 
-Detailed chapters on weirs, notches, and flow measurement.
+2. Experiment 3: Flow Over Weirs – Scribd
+This document outlines an experiment to observe flow characteristics over rectangular and V-notch weirs. It includes procedures for measuring head readings, calculating discharge, and determining the coefficient of discharge (Cd) for each weir type.
 
-Engineering Hydrology by K. Subramanya
+🔗 Experiment 3 Flow Over Weirs – Scribd
 
-Covers flow measurement techniques including V-notch weirs.
+3. V-Notch Experiment – IIT Patna Virtual Fluid Laboratory
+This resource offers a step-by-step laboratory procedure for conducting V-notch weir experiments. It includes instructions for adjusting valves, measuring water levels, and collecting data for different discharges.
 
-Hydraulic Engineering by Modi & Seth
+🔗 V-Notch Experiment – IIT Patna Virtual Fluid Laboratory
 
-Explanation of various weirs with formulas and experimental setups.
+4. Fluid Mechanics Laboratory – Memorial University
+This laboratory guide provides an overview of the objectives, apparatus, theory, and experimental procedure for measuring flow rates using a V-notch weir. It includes the commonly accepted formula for flow over a V-notch weir and detailed steps for conducting the experiment.
 
-Research Papers & Articles:
+🔗 Fluid Mechanics - 5713 - Laboratory – Memorial University
 
-Determination of Discharge over a V-notch Weir – International Journal of Engineering Research and Applications (IJERA)
+5. An Empirical V-notch Weir Equation and Standard Procedure – ResearchGate
+This research paper presents an empirical equation for a metal-edge sharp-crest V-notch weir and a standard procedure to accurately estimate drainage discharge. It includes calibration equations and measurement techniques for determining flow rates.
 
-Link
+🔗 An Empirical V-notch Weir Equation and Standard Procedure – ResearchGate
 
-Study on Flow Measurement Using V-Notch Weir – ResearchGate
+6. Design Engineering V-notch Discharge Coefficient Prediction – ResearchGate
+This paper discusses the prediction of discharge coefficients for V-notch weirs based on different hydraulic and geometric characteristics. It includes references to various studies and standards related to V-notch weir calibration.
 
-Link
+🔗 Design Engineering V-notch Discharge Coefficient Prediction – ResearchGate
 
-Web Resources:
+7. Water Flow Measuring Methods in Small Hydropower – ResearchGate
+This study provides an overview of water flow measuring methods in small hydropower applications, including the use of V-notch weirs. It discusses the advantages of V-notch weirs for measuring low flow rates and includes recommended equations for flow measurement.
 
-Wikipedia: Weir (Water)
-
-Good for basic theory and formulas.
-
-Engineering Notes: V-Notch Weir and Its Formula
-
-Clear explanation and derivations.
-
-NPTEL Lecture Notes: Flow Measurement by Weirs
-
-Academic resource with detailed theory and experimental considerations.
-
-Standards and Manuals:
-
-IS: 12063-1987 – Measurement of discharge by weirs and flumes (Indian Standard)
-
-Useful for standard procedures and formulae.
-
-USGS Water Measurement Manual
-
-Practical guidelines for flow measurement devices including V-notch weirs.
+🔗 Water Flow Measuring Methods in Small Hydropower – ResearchGate
 
