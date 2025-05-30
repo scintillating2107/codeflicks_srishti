@@ -10,5 +10,5 @@ EMPTY
 | :---: | :---: | :---: | :---: | :---: |
 | 1 | Srishti Singh | srishti2107singh@gmail.com | Rajkiya Engineering College,Kannauj | Computer Science & Engineering |
 | 2 | Manya Gupta | manyagupta9140@gmail.com | Rajkiya Engineering College,Kannauj | Computer Science & Engineering |
-| 3 | Prakhar Mishra | mishraprakhar3030@gmail.com |  Computer Science & Engineering |
-| 4 | Himanshi | Rajkiya Engineering College,Kannauj | Electronics Engineering | himanshisharma2405@gmail.com
+| 3 | Prakhar Mishra | mishraprakhar3030@gmail.com | Rajkiya Engineering College,Kannauj | Computer Science & Engineering |
+| 4 | Himanshi | himanshisharma2405@gmail.com | Rajkiya Engineering College,Kannauj | Electronics Engineering |
