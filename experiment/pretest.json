@@ -2,88 +2,88 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "After performing the V-notch experiment, what is the most likely reason the actual discharge is less than the theoretical discharge?",
+      "question": "Why is a V-notch considered more sensitive at low flow rates compared to other notches?",
       "answers": {
-        "a": "The notch was too wide",
-        "b": "Water was too cold",
-        "c": "Energy losses due to friction and turbulence",
-        "d": "Incorrect stopwatch reading"
+        "a": "It has a larger opening",
+        "b": "The flow area increases rapidly with head",
+        "c": "It reduces the velocity of flow",
+        "d": "It is easier to manufacture"
       },
       "explanations": {
-        "a": "Incorrect – notch width affects flow but doesn't explain lower discharge directly.",
-        "b": "Incorrect – temperature has a minor effect under standard conditions.",
-        "c": "Correct – real fluid losses reduce actual discharge. <a href='https://nptel.ac.in/courses/105103021'>Learn more</a>",
-        "d": "Incorrect – it affects time, not discharge directly."
-      },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "Which measurement most directly impacts the accuracy of the calculated discharge in a V-notch experiment?",
-      "answers": {
-        "a": "Time",
-        "b": "Angle of the notch",
-        "c": "Head (H) above the notch",
-        "d": "Notch thickness"
-      },
-      "explanations": {
-        "a": "Incorrect – time matters for volume collection but not as critical as head.",
-        "b": "Important, but typically fixed.",
-        "c": "Correct – small errors in H cause large errors in Q since Q ∝ H^5/2. <a href='https://www.engineeringenotes.com/hydraulic-machines/weirs/v-notch-weir-and-its-formula-hydraulic-machines/40782'>Reference</a>",
-        "d": "Incorrect – not the primary influence."
-      },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "What is typically plotted to verify the discharge relationship in the V-notch experiment?",
-      "answers": {
-        "a": "Q vs H^0.5",
-        "b": "H vs time",
-        "c": "Q vs H",
-        "d": "Q vs H^2.5"
-      },
-      "explanations": {
-        "a": "Incorrect – this is for orifice-type flow.",
-        "b": "Incorrect – not used to verify discharge relationship.",
-        "c": "Acceptable, but not linear for V-notch verification.",
-        "d": "Correct – Q ∝ H^(5/2) in V-notch theory. <a href='https://www.civilwala.com/weir-types-formula/'>Reference</a>"
-      },
-      "correctAnswer": "d",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "How is the coefficient of discharge (Cd) determined experimentally in this setup?",
-      "answers": {
-        "a": "By measuring pressure at the notch",
-        "b": "By comparing actual and theoretical discharge",
-        "c": "By calculating velocity head",
-        "d": "By checking water temperature"
-      },
-      "explanations": {
-        "a": "Incorrect – pressure is not directly used.",
-        "b": "Correct – Cd = Q_actual / Q_theoretical. <a href='https://en.wikipedia.org/wiki/Weir_(water)'>Learn more</a>",
-        "c": "Part of theory, but not enough alone.",
-        "d": "Incorrect – temperature doesn’t determine Cd."
+        "a": "Incorrect – a larger opening doesn't guarantee better sensitivity.",
+        "b": "Correct – the V-notch's triangular shape causes a rapid increase in flow area as head increases. <a href='https://en.wikipedia.org/wiki/Weir_(water)'>Learn more</a>",
+        "c": "Incorrect – the V-notch does not primarily function by reducing velocity.",
+        "d": "Incorrect – manufacturing ease isn't related to flow sensitivity."
       },
       "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does the angle θ represent in the V-notch discharge formula?",
+      "answers": {
+        "a": "Width of the notch",
+        "b": "Water surface slope",
+        "c": "Angle of the V-notch",
+        "d": "Height of the fluid"
+      },
+      "explanations": {
+        "a": "Incorrect – θ is not the width.",
+        "b": "Incorrect – it has nothing to do with surface slope.",
+        "c": "Correct – θ is the angle of the V-notch opening. <a href='https://www.engineeringenotes.com/hydraulic-machines/weirs/v-notch-weir-and-its-formula-hydraulic-machines/40782'>Reference</a>",
+        "d": "Incorrect – height is represented by H."
+      },
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "If a graph of Q vs H^2.5 is a straight line, what does it indicate?",
+      "question": "What happens to the flow rate if the head over a 90° V-notch doubles?",
       "answers": {
-        "a": "Measurement error in head",
-        "b": "Incorrect formula used",
-        "c": "The experimental data follows theoretical prediction",
-        "d": "Water flow was unsteady"
+        "a": "It doubles",
+        "b": "It triples",
+        "c": "It increases more than double",
+        "d": "It stays the same"
       },
       "explanations": {
-        "a": "Incorrect – straight line indicates correctness.",
-        "b": "Incorrect – the formula is validated by the straight line.",
-        "c": "Correct – linearity confirms Q ∝ H^2.5 relationship.",
-        "d": "Incorrect – unsteady flow would create a scatter plot."
+        "a": "Incorrect – flow rate increases nonlinearly with head.",
+        "b": "Incorrect – it increases more than triple.",
+        "c": "Correct – because Q ∝ H^(5/2), doubling H increases Q by more than double. <a href='https://nptel.ac.in/content/storage2/courses/105103021/module5/lecture4/lecture4.pdf'>Proof here</a>",
+        "d": "Incorrect – flow rate definitely changes with head."
       },
       "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which property of water directly affects the theoretical discharge through a V-notch?",
+      "answers": {
+        "a": "Temperature",
+        "b": "Surface tension",
+        "c": "Density",
+        "d": "Color"
+      },
+      "explanations": {
+        "a": "Partially relevant but not direct in the formula.",
+        "b": "Not included in standard discharge calculations.",
+        "c": "Correct – density influences flow due to its role in gravitational potential energy. <a href='https://www.sciencedirect.com/topics/engineering/weir-flow'>Reference</a>",
+        "d": "Incorrect – color has no effect."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What happens to the coefficient of discharge (Cd) if energy losses around the V-notch increase?",
+      "answers": {
+        "a": "It increases",
+        "b": "It decreases",
+        "c": "It becomes zero",
+        "d": "It remains unchanged"
+      },
+      "explanations": {
+        "a": "Incorrect – losses reduce efficiency.",
+        "b": "Correct – more losses mean actual discharge is less, lowering Cd. <a href='https://www.civilwala.com/weir-types-formula/'>Explore more</a>",
+        "c": "Incorrect – it won’t drop to zero unless there's no flow.",
+        "d": "Incorrect – Cd changes with flow conditions."
+      },
+      "correctAnswer": "b",
       "difficulty": "intermediate"
     }
   ]
