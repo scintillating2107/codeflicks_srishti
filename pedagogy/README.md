@@ -206,6 +206,124 @@ Where in real life are V-notch weirs commonly used, and why?
 If you had to measure very high flow rates, would a V-notch be suitable? Why or why not?
 Suggest an alternative method for flow measurement and compare it to the V-notch method.
 <h4> [5. Simulator Interactions](#SI)
+Simulator Interactions for V-Notch Weir Flow Rate Experiment
+1. Start the Simulation
+Select the V-notch weir experiment from the simulation menu.
+
+Read the theory and objective to understand what parameters will be measured (usually flow rate vs. head).
+
+2. Set Up the Equipment (virtually)
+Assemble the water tank, V-notch weir plate, and collection tank if needed.
+
+Place a point gauge or scale at the notch to measure the water head (height above the notch vertex).
+
+3. Input Initial Parameters
+Choose the notch angle (typically 60°, 90°, or 120°).
+
+Select flow rate (some simulators let you control it manually or through a valve).
+
+4. Start Flow
+Open the valve or start the pump to let water flow over the V-notch.
+
+Wait for steady state (a constant water head).
+
+5. Measure Head (H)
+Use the point gauge or simulated scale to measure the height of water above the notch vertex.
+
+Record the value (often in cm or m).
+
+6. Record Flow Rate
+In some simulators, flow rate is auto-calculated.
+
+In others, you may need to collect water in a virtual container and measure volume vs. time.
+
+Formula to calculate theoretical flow rate:
+
+𝑄
+=
+8
+15
+𝐶
+𝑑
+2
+𝑔
+tan
+⁡
+(
+𝜃
+2
+)
+𝐻
+5
+/
+2
+Q= 
+15
+8
+​
+ C 
+d
+​
+  
+2g
+​
+ tan( 
+2
+θ
+​
+ )H 
+5/2
+ 
+where:
+
+𝑄
+Q = discharge
+
+𝐶
+𝑑
+C 
+d
+​
+  = coefficient of discharge (typically given or calculated)
+
+𝑔
+g = acceleration due to gravity
+
+𝜃
+θ = notch angle
+
+𝐻
+H = head
+
+7. Repeat for Different Heads
+Change the flow rate (adjust valve).
+
+Measure new head and corresponding discharge.
+
+8. Plot Results (optional)
+Many simulators let you plot Q vs H or 
+𝑄
+Q vs 
+𝐻
+5
+/
+2
+H 
+5/2
+  to verify linearity and calculate 
+𝐶
+𝑑
+C 
+d
+​
+ .
+
+9. Download or Save Data
+Export data table if available.
+
+Use results to compare experimental and theoretical discharge.
+
+
     
 <hr>
 
