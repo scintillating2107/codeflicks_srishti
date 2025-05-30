@@ -79,96 +79,10 @@
 
 <h4> [2. Learning Objectives ](#LO)
 
- 1. Understanding Theoretical Concepts
-     Understand the principle of flow measurement using a V-notch weir.
 
-     Learn the relationship between head of water over the notch and discharge.
-
-     Comprehend the concept of coefficient of discharge (Cd) and its importance.
-
-2. Familiarization with Apparatus
-     Identify the components of the V-notch apparatus (e.g., notch plate, stilling basin, measuring tank, point gauge).
-
-     Understand the proper setup and calibration of the experiment.
-
-3. Measurement Skills
-     Accurately measure the head over the V-notch using a point gauge.
-
-     Record volumetric flow data over time to determine actual discharge.
-
-4. Analytical Skills
-     Use the theoretical formula for discharge over a V-notch:
-
-     Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
 
  
-     where 
-       𝑄 is the discharge, 
-       𝐶𝑑 is the coefficient of discharge, 
-       𝜃 is the notch angle, and 
-       𝐻 is the head.
-
-     Calculate both theoretical and actual discharge, and determine the coefficient of discharge (Cd) experimentally.
-
-5. Error Analysis and Interpretation
-    Compare theoretical and actual discharge to understand sources of error and deviation.
-
-    Interpret the impact of fluid dynamics factors (viscosity, turbulence, surface tension) on results.
-
-6. Application and Real-World Relevance
-   Relate the use of V-notch weirs to real-world flow measurement in open channels and irrigation systems.
-
-   Understand advantages and limitations of V-notch weirs in practical applications.
-<h4> [3. Instructional Strategy](#IS)
-1.🎯 Learning Outcome Orientation
-Begin by clearly stating the learning objectives:
-    Understand open channel flow principles.
-    Apply the V-notch discharge formula.
-    Accurately measure head and calculate flow rate.
-    Analyze and interpret experimental results.
-    Connect lab findings to real-world applications.
-2. 📖 Pre-Lab Theoretical Instruction
-Conduct a session introducing key concepts:
-    Role and design of a V-notch weir.
-    Derivation of the discharge equation:
-                                                    Q=15/8 Cd 2g tan(2θ) H 5/2
-   Explanation of terms: head (H), coefficient of discharge (Cd), and flow behavior.
-   Use diagrams, videos, or slides to aid understanding.
-3. 🧑‍🏫 Lab Demonstration
-The instructor demonstrates the setup:
-   Identify components: flow tank, V-notch, measuring devices.
-   Show correct head measurement and flow collection.
-   Emphasize safety and accuracy.
-   Clarify how to take multiple readings for various heads.
-4. 🧪 Student Hands-On Execution
-Students conduct the experiment in groups:
-   Set the flow, measure head, collect outflow volume.
-   Record time and calculate discharge.
-   Repeat for different head values.
-   Instructor supervises, prompts questions, and provides guidance.
-5. 📊 Data Analysis and Discussion
-Students analyze the collected data:
-   Calculate actual and theoretical discharge.
-   Plot discharge (Q) vs. head (H) graphs.
-   Determine Cd from results.
-   Discuss discrepancies, error sources, and practical implications.
-6. ✍️ Lab Report and Reflection
-Students prepare a report including:
-   Objective, procedure, data, calculations.
-   Graphs and error analysis.
-   Conclusions and real-world relevance.
-   Optional reflection on learning experience and challenges.
-7. 📋 Assessment and Feedback
-Instructor evaluates based on:
-   Accuracy and completeness of the report.
-   Participation and understanding during the lab.
-   Oral questions or presentations.
-   Constructive feedback is provided to improve learning.
-8. 📚 Supportive Resources
-To reinforce learning:
-   Provide reading materials or digital simulations.
-   Offer design problems or real-world case discussions.
-   Use online platforms for pre-lab quizzes or post-lab evaluations.
+  
 <h4> [4. Task & Assessment Questions](#AQ)
 ✅ Task Overview
 Students are required to:
