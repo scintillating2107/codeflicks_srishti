@@ -3,147 +3,659 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pipe Flow Simulator</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Pipe Flow Simulator</h1>
-            <p class="subtitle">Interactive visualization of fluid dynamics in a horizontal pipe</p>
-        </header>
-
-        <main>
-            <section class="simulation-section">
-                <div class="card simulation-container">
-                    <h2>Flow Visualization</h2>
-                    <canvas id="pipeCanvas"></canvas>
-                    <div id="pressureReadings">
-                        <div class="pressure-gauge" id="pressure1">
-                            <i class="ti ti-gauge"></i>
-                            P1: <span>0</span> Pa
-                            <div class="tooltip">Inlet pressure measurement point</div>
-                        </div>
-                        <div class="pressure-gauge" id="pressure2">
-                            <i class="ti ti-gauge"></i>
-                            P2: <span>0</span> Pa
-                            <div class="tooltip">Outlet pressure measurement point</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="two-column">
-                <section class="input-section">
-                    <div class="card">
-                        <h2>Input Parameters</h2>
-                        <div class="controls">
-                            <div class="input-group">
-                                <label for="pipeLength">
-                                    Pipe Length (L)
-                                    <i class="ti ti-help-circle" data-tooltip="The total length of the pipe in meters"></i>
-                                </label>
-                                <div class="input-wrapper">
-                                    <input type="number" id="pipeLength" min="1" max="10" step="0.1" value="5" />
-                                    <span class="unit-label">m</span>
-                                </div>
-                            </div>
-                            
-                            <div class="input-group">
-                                <label for="pipeDiameter">
-                                    Pipe Diameter (D)
-                                    <i class="ti ti-help-circle" data-tooltip="Internal diameter of the pipe in meters"></i>
-                                </label>
-                                <div class="input-wrapper">
-                                    <input type="number" id="pipeDiameter" min="0.01" max="0.1" step="0.01" value="0.05" />
-                                    <span class="unit-label">m</span>
-                                </div>
-                            </div>
-                            
-                            <div class="input-group">
-                                <label for="flowRate">
-                                    Flow Rate (Q)
-                                    <i class="ti ti-help-circle" data-tooltip="Volume of fluid passing through the pipe per second"></i>
-                                </label>
-                                <input type="range" id="flowRate" min="0" max="2" step="0.1" value="1" />
-                                <div class="value-display">
-                                    <span id="flowRateValue">1.0</span>
-                                    <span class="unit-label">L/s</span>
-                                </div>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="fluid">
-                                    Fluid Type
-                                    <i class="ti ti-help-circle" data-tooltip="Select the type of fluid for simulation"></i>
-                                </label>
-                                <select id="fluid">
-                                    <option value="water">Water</option>
-                                    <option value="glycerin">Glycerin</option>
-                                    <option value="oil">Oil</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="results-section">
-                    <div class="card">
-                        <h2>Results</h2>
-                        <div class="results">
-                            <div class="result-item">
-                                <label>
-                                    Flow Velocity
-                                    <i class="ti ti-help-circle" data-tooltip="Average velocity of fluid in the pipe"></i>
-                                </label>
-                                <div class="result-value">
-                                    <span id="velocity" class="animate-value">0</span>
-                                    <span class="unit-label">m/s</span>
-                                </div>
-                            </div>
-                            <div class="result-item">
-                                <label>
-                                    Head Loss
-                                    <i class="ti ti-help-circle" data-tooltip="Energy loss due to friction"></i>
-                                </label>
-                                <div class="result-value">
-                                    <span id="headLoss" class="animate-value">0</span>
-                                    <span class="unit-label">m</span>
-                                </div>
-                            </div>
-                            <div class="result-item">
-                                <label>
-                                    Friction Factor
-                                    <i class="ti ti-help-circle" data-tooltip="Darcy-Weisbach friction factor"></i>
-                                </label>
-                                <div class="result-value">
-                                    <span id="frictionFactor" class="animate-value">0</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <section class="graph-section">
-                <div class="card">
-                    <h2>Head Loss vs Flow Velocity</h2>
-                    <div class="graph-container">
-                        <canvas id="headLossGraph"></canvas>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>Created for educational purposes. Values are simulated using the Darcy-Weisbach equation.</p>
-        </footer>
-    </div>
+    <title>Virtual Lab - Flow Rate Measurement using V-Notch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="simulation.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .water-animation {
+            background: linear-gradient(0deg, rgba(34, 193, 195, 0.7) 0%, rgba(45, 120, 253, 0.7) 100%);
+            background-size: 400% 400%;
+            animation: waterFlow 8s ease infinite;
+        }
+        @keyframes waterFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .notch {
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+        .water-level {
+            transition: height 0.8s ease-out;
+        }
+        .channel-side {
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        .metal-texture {
+            background: linear-gradient(135deg, #b1b1b1 0%, #9e9e9e 50%, #757575 51%, #616161 100%);
+        }
+        .water-surface {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md py-4 mb-6">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-2xl font-bold">Virtual Fluid Mechanics Lab</h1>
+                <h2 class="text-sm font-medium text-blue-100 mt-1">Flow Rate Measurement using V-Notch Weir</h2>
+            </div>
+            <div class="mt-2 md:mt-0">
+                <button id="helpBtn" class="bg-blue-800 hover:bg-blue-900 px-3 py-1.5 rounded-md flex items-center text-sm transition-colors duration-200">
+                    <i class="fas fa-question-circle mr-1.5"></i> Help
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Experiment Visualization -->
+            <div class="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Experiment Setup</h3>
+                
+                <div class="relative h-96 bg-gray-100 rounded-lg overflow-hidden mb-4 border-2 border-gray-300">
+                    <!-- Channel base -->
+                    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gray-300 channel-side"></div>
+                    
+                    <!-- Channel sides -->
+                    <div class="absolute bottom-16 left-0 w-8 h-full bg-gray-400 channel-side"></div>
+                    <div class="absolute bottom-16 right-0 w-8 h-full bg-gray-400 channel-side"></div>
+                    
+                    <!-- V-Notch Weir -->
+                    <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-32 notch metal-texture"></div>
+                    
+                    <!-- Water -->
+                    <div id="water" class="absolute bottom-16 left-8 right-8 water-animation water-level" style="height: 30%;">
+                        <div class="absolute top-0 left-0 right-0 h-2 water-surface"></div>
+                    </div>
+                    
+                    <!-- Outlet flow -->
+                    <div class="absolute bottom-16 right-8 w-16 h-4 overflow-hidden">
+                        <div class="absolute top-0 left-0 right-0 h-full water-animation" style="clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);"></div>
+                    </div>
+                    
+                    <!-- Measurement Scale -->
+                    <div class="absolute right-4 top-4 bottom-16 w-8 bg-white bg-opacity-90 rounded border-2 border-gray-400 shadow-md">
+                        <div class="relative h-full">
+                            <div class="absolute left-0 right-0 h-px bg-red-600" style="bottom: 30%;">
+                                <div class="absolute -left-10 text-xs font-mono bg-white px-1 rounded">H = <span id="hValue">0.30</span> m</div>
+                            </div>
+                            <div class="absolute left-0 right-0 h-px bg-gray-700" style="bottom: 0%;">
+                                <div class="absolute -left-8 text-xs bg-white px-1 rounded">0</div>
+                            </div>
+                            <div class="absolute left-0 right-0 h-px bg-gray-500" style="bottom: 25%;">
+                                <div class="absolute -left-8 text-xs bg-white px-1 rounded">0.25</div>
+                            </div>
+                            <div class="absolute left-0 right-0 h-px bg-gray-500" style="bottom: 50%;">
+                                <div class="absolute -left-8 text-xs bg-white px-1 rounded">0.50</div>
+                            </div>
+                            <div class="absolute left-0 right-0 h-px bg-gray-500" style="bottom: 75%;">
+                                <div class="absolute -left-8 text-xs bg-white px-1 rounded">0.75</div>
+                            </div>
+                            <div class="absolute left-0 right-0 h-px bg-gray-700" style="bottom: 100%;">
+                                <div class="absolute -left-8 text-xs bg-white px-1 rounded">1.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Flow direction indicators -->
+                    <div class="absolute bottom-24 left-12 animate-pulse">
+                        <i class="fas fa-arrow-right text-blue-700 text-2xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-gray-100 p-4 rounded-lg border border-gray-300">
+                        <label for="headControl" class="block text-sm font-medium text-gray-700 mb-1">Head Control (H)</label>
+                        <input type="range" id="headControl" min="10" max="80" value="30" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-xs text-gray-600 mt-1">
+                            <span>0.1 m</span>
+                            <span>0.45 m</span>
+                            <span>0.8 m</span>
+                        </div>
+                        <div class="mt-2 flex justify-center">
+                            <button id="fineTuneMinus" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-3 rounded-l">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <div class="bg-white px-4 py-1 border-t border-b border-gray-300 text-sm">
+                                Fine Tune
+                            </div>
+                            <button id="fineTunePlus" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-3 rounded-r">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 p-4 rounded-lg border border-gray-300">
+                        <label for="notchAngle" class="block text-sm font-medium text-gray-700 mb-1">Notch Angle (θ)</label>
+                        <select id="notchAngle" class="w-full p-2 border border-gray-300 rounded-md bg-white">
+                            <option value="30">30°</option>
+                            <option value="45">45°</option>
+                            <option value="60" selected>60°</option>
+                            <option value="90">90°</option>
+                            <option value="120">120°</option>
+                        </select>
+                        <div class="mt-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="autoCalculate" class="form-checkbox" checked>
+                                <span class="ml-2 text-sm">Auto-calculate</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 p-4 rounded-lg border border-gray-300 space-y-2">
+                        <button id="startBtn" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md flex items-center justify-center">
+                            <i class="fas fa-play mr-2"></i> Start Experiment
+                        </button>
+                        <button id="addDataBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Record Data
+                        </button>
+                        <button id="resetBtn" class="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-md flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calculations Panel -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Measurements & Calculations</h3>
+                
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                        <h4 class="font-medium text-blue-800 mb-2">Parameters</h4>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div>Notch Angle (θ):</div>
+                            <div class="font-mono" id="displayAngle">60°</div>
+                            <div>Head (H):</div>
+                            <div class="font-mono" id="displayH">0.30 m</div>
+                            <div>Gravity (g):</div>
+                            <div class="font-mono">9.81 m/s²</div>
+                            <div>Discharge Coeff. (C<sub>d</sub>):</div>
+                            <div class="font-mono">0.62</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <h4 class="font-medium text-green-800 mb-2">Calculations</h4>
+                        <div class="text-sm space-y-2">
+                            <div>
+                                <div class="font-medium">Theoretical Discharge (Q):</div>
+                                <div class="font-mono text-xs bg-white p-2 rounded mt-1 border border-gray-200" id="theoreticalQ">
+                                    Q = (8/15) × C<sub>d</sub> × √(2g) × tan(θ/2) × H<sup>5/2</sup>
+                                </div>
+                                <div class="font-mono mt-2 text-lg font-bold text-green-700" id="calculatedQ">0.0123 m³/s</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <h4 class="font-medium text-purple-800 mb-2">Data Table</h4>
+                        <div class="overflow-x-auto max-h-60 overflow-y-auto">
+                            <table class="min-w-full text-xs">
+                                <thead class="sticky top-0">
+                                    <tr class="bg-purple-100">
+                                        <th class="px-2 py-1 border">Run</th>
+                                        <th class="px-2 py-1 border">H (m)</th>
+                                        <th class="px-2 py-1 border">θ (°)</th>
+                                        <th class="px-2 py-1 border">Q (m³/s)</th>
+                                        <th class="px-2 py-1 border">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dataTable">
+                                    <!-- Data will be added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-2 flex justify-between">
+                            <button id="exportDataBtn" class="text-xs bg-purple-600 hover:bg-purple-700 text-white py-1 px-2 rounded">
+                                <i class="fas fa-download mr-1"></i> Export
+                            </button>
+                            <button id="clearDataBtn" class="text-xs bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded">
+                                <i class="fas fa-trash mr-1"></i> Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Graph Section -->
+        <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">H vs Q Relationship</h3>
+            <div class="h-64">
+                <canvas id="resultsChart"></canvas>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+                <p>The graph shows the relationship between head (H) and discharge (Q). For a V-notch weir, the relationship is Q ∝ H<sup>5/2</sup>.</p>
+            </div>
+        </div>
+        
+        <!-- Theory Section -->
+        <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Theory</h3>
+            <div class="prose max-w-none">
+                <h4 class="text-lg font-medium text-blue-800">V-Notch Weir</h4>
+                <p>A V-notch weir is a flow measurement device with a V-shaped opening used to measure small to moderate flow rates in open channels. The flow rate is determined by measuring the height of the water surface (head) above the apex of the notch.</p>
+                
+                <h4 class="text-lg font-medium text-blue-800 mt-4">Discharge Equation</h4>
+                <p>The theoretical discharge over a V-notch weir is given by:</p>
+                <div class="bg-gray-100 p-4 rounded-lg my-2 border border-gray-300">
+                    Q = (8/15) × C<sub>d</sub> × √(2g) × tan(θ/2) × H<sup>5/2</sup>
+                </div>
+                <p>Where:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Q = Discharge rate (m³/s)</li>
+                    <li>C<sub>d</sub> = Discharge coefficient (typically 0.58-0.62)</li>
+                    <li>g = Acceleration due to gravity (9.81 m/s²)</li>
+                    <li>θ = Angle of the V-notch (degrees)</li>
+                    <li>H = Head above the notch apex (m)</li>
+                </ul>
+                
+                <h4 class="text-lg font-medium text-blue-800 mt-4">Procedure</h4>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li>Set up the V-notch weir in the channel</li>
+                    <li>Adjust the flow rate to achieve a steady flow</li>
+                    <li>Measure the head (H) above the apex of the notch</li>
+                    <li>Record the measurements</li>
+                    <li>Calculate the discharge using the formula</li>
+                    <li>Repeat for different flow rates</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Modal -->
+    <div id="helpModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Virtual Lab Help</h3>
+                    <button id="closeHelp" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="prose">
+                    <h4 class="font-medium">How to Use This Simulator</h4>
+                    <p>This virtual lab allows you to experiment with flow rate measurement using a V-notch weir. Follow these steps:</p>
+                    <ol class="list-decimal pl-5 space-y-1">
+                        <li>Use the <strong>Head Control</strong> slider to adjust the water level (H)</li>
+                        <li>Fine-tune the head using the +/- buttons for precise measurements</li>
+                        <li>Select different notch angles from the dropdown</li>
+                        <li>Click <strong>Start Experiment</strong> to begin measurements</li>
+                        <li>Observe the water level (H) in the visualization</li>
+                        <li>View the calculated discharge rate (Q) in the right panel</li>
+                        <li>Click <strong>Record Data</strong> to save measurements</li>
+                        <li>Use <strong>Reset</strong> to clear the current experiment</li>
+                    </ol>
+                    
+                    <h4 class="font-medium mt-4">Understanding the Results</h4>
+                    <p>The graph shows the relationship between head (H) and discharge (Q). For a V-notch weir, this follows a Q ∝ H<sup>5/2</sup> relationship.</p>
+                    <p>The discharge coefficient (C<sub>d</sub>) accounts for real-world effects like viscosity and surface tension.</p>
+                    
+                    <h4 class="font-medium mt-4">Learning Objectives</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Understand the principle of flow measurement using a V-notch weir</li>
+                        <li>Learn the relationship between head and discharge</li>
+                        <li>Observe how notch angle affects the flow rate</li>
+                        <li>Practice experimental data collection and analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const headControlSlider = document.getElementById('headControl');
+        const fineTuneMinusBtn = document.getElementById('fineTuneMinus');
+        const fineTunePlusBtn = document.getElementById('fineTunePlus');
+        const notchAngleSelect = document.getElementById('notchAngle');
+        const autoCalculateCheckbox = document.getElementById('autoCalculate');
+        const startBtn = document.getElementById('startBtn');
+        const addDataBtn = document.getElementById('addDataBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const exportDataBtn = document.getElementById('exportDataBtn');
+        const clearDataBtn = document.getElementById('clearDataBtn');
+        const waterElement = document.getElementById('water');
+        const hValueElement = document.getElementById('hValue');
+        const displayAngle = document.getElementById('displayAngle');
+        const displayH = document.getElementById('displayH');
+        const theoreticalQ = document.getElementById('theoreticalQ');
+        const calculatedQ = document.getElementById('calculatedQ');
+        const dataTable = document.getElementById('dataTable');
+        const helpBtn = document.getElementById('helpBtn');
+        const helpModal = document.getElementById('helpModal');
+        const closeHelp = document.getElementById('closeHelp');
+        
+        // Experiment state
+        let experimentRunning = false;
+        let runCount = 0;
+        let dataPoints = [];
+        
+        // Initialize Chart
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'H vs Q',
+                    data: [],
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1,
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Head (H) in meters'
+                        },
+                        min: 0,
+                        max: 1
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Discharge (Q) in m³/s'
+                        },
+                        min: 0,
+                        max: 0.05
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `H: ${context.parsed.x.toFixed(3)} m, Q: ${context.parsed.y.toFixed(5)} m³/s`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Update water level based on head control
+        function updateWaterLevel() {
+            const sliderValue = parseInt(headControlSlider.value);
+            // Map slider (10-80) to water height (10%-80% of container)
+            waterElement.style.height = `${sliderValue}%`;
+            
+            // Calculate actual head in meters (0.1m to 0.8m)
+            const head = (0.1 + (sliderValue * 0.01)).toFixed(3);
+            hValueElement.textContent = head;
+            displayH.textContent = `${head} m`;
+            
+            if (experimentRunning && autoCalculateCheckbox.checked) {
+                calculateDischarge(head);
+            }
+        }
+        
+        // Calculate discharge based on current parameters
+        function calculateDischarge(head) {
+            const angle = parseInt(notchAngleSelect.value);
+            const headValue = parseFloat(head);
+            
+            // Convert angle to radians
+            const angleRad = angle * Math.PI / 180;
+            
+            // Typical discharge coefficient for V-notch
+            const Cd = 0.62;
+            
+            // Calculate discharge (Q = (8/15) × Cd × √(2g) × tan(θ/2) × H^(5/2))
+            const Q = (8/15) * Cd * Math.sqrt(2 * 9.81) * Math.tan(angleRad/2) * Math.pow(headValue, 2.5);
+            
+            // Update display
+            theoreticalQ.innerHTML = `Q = (8/15) × C<sub>d</sub> × √(2g) × tan(${angle}°/2) × H<sup>5/2</sup>`;
+            calculatedQ.textContent = Q.toFixed(5) + " m³/s";
+            
+            return Q;
+        }
+        
+        // Add data point to table and chart
+        function addDataPoint() {
+            if (!experimentRunning) {
+                alert("Please start the experiment first!");
+                return;
+            }
+            
+            const head = parseFloat(hValueElement.textContent);
+            const angle = parseInt(notchAngleSelect.value);
+            const Q = calculateDischarge(head);
+            
+            runCount++;
+            const newDataPoint = {x: head, y: Q, angle: angle};
+            dataPoints.push(newDataPoint);
+            
+            // Update table
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td class="px-2 py-1 border">${runCount}</td>
+                <td class="px-2 py-1 border">${head.toFixed(3)}</td>
+                <td class="px-2 py-1 border">${angle}°</td>
+                <td class="px-2 py-1 border">${Q.toFixed(5)}</td>
+                <td class="px-2 py-1 border text-center">
+                    <button class="delete-btn text-red-600 hover:text-red-800" data-index="${runCount-1}">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </td>
+            `;
+            dataTable.appendChild(newRow);
+            
+            // Add event listener to delete button
+            newRow.querySelector('.delete-btn').addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                deleteDataPoint(index);
+            });
+            
+            // Update chart
+            chart.data.datasets[0].data = dataPoints.map(point => ({x: point.x, y: point.y}));
+            
+            // Adjust chart scales if needed
+            const maxH = Math.max(...dataPoints.map(p => p.x), 0.8);
+            const maxQ = Math.max(...dataPoints.map(p => p.y), 0.05);
+            
+            chart.options.scales.x.max = Math.max(maxH * 1.1, 1);
+            chart.options.scales.y.max = Math.max(maxQ * 1.1, 0.05);
+            chart.update();
+        }
+        
+        // Delete a data point
+        function deleteDataPoint(index) {
+            dataPoints.splice(index, 1);
+            runCount--;
+            
+            // Rebuild table
+            dataTable.innerHTML = `
+                <tr class="bg-purple-100">
+                    <th class="px-2 py-1 border">Run</th>
+                    <th class="px-2 py-1 border">H (m)</th>
+                    <th class="px-2 py-1 border">θ (°)</th>
+                    <th class="px-2 py-1 border">Q (m³/s)</th>
+                    <th class="px-2 py-1 border">Action</th>
+                </tr>
+            `;
+            
+            // Add remaining points back to table
+            dataPoints.forEach((point, i) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="px-2 py-1 border">${i+1}</td>
+                    <td class="px-2 py-1 border">${point.x.toFixed(3)}</td>
+                    <td class="px-2 py-1 border">${point.angle}°</td>
+                    <td class="px-2 py-1 border">${point.y.toFixed(5)}</td>
+                    <td class="px-2 py-1 border text-center">
+                        <button class="delete-btn text-red-600 hover:text-red-800" data-index="${i}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                `;
+                dataTable.appendChild(row);
+                
+                // Add event listener to delete button
+                row.querySelector('.delete-btn').addEventListener('click', function() {
+                    const idx = parseInt(this.getAttribute('data-index'));
+                    deleteDataPoint(idx);
+                });
+            });
+            
+            // Update chart
+            chart.data.datasets[0].data = dataPoints.map(point => ({x: point.x, y: point.y}));
+            
+            // Adjust chart scales if needed
+            const maxH = dataPoints.length > 0 ? Math.max(...dataPoints.map(p => p.x)) : 0.8;
+            const maxQ = dataPoints.length > 0 ? Math.max(...dataPoints.map(p => p.y)) : 0.05;
+            
+            chart.options.scales.x.max = Math.max(maxH * 1.1, 1);
+            chart.options.scales.y.max = Math.max(maxQ * 1.1, 0.05);
+            chart.update();
+        }
+        
+        // Export data as CSV
+        function exportData() {
+            if (dataPoints.length === 0) {
+                alert("No data to export!");
+                return;
+            }
+            
+            let csvContent = "Run,H (m),θ (°),Q (m³/s)\n";
+            
+            dataPoints.forEach((point, i) => {
+                csvContent += `${i+1},${point.x.toFixed(3)},${point.angle},${point.y.toFixed(5)}\n`;
+            });
+            
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'v-notch_data.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Clear all data
+        function clearData() {
+            if (confirm("Are you sure you want to clear all data?")) {
+                dataPoints = [];
+                runCount = 0;
+                dataTable.innerHTML = `
+                    <tr class="bg-purple-100">
+                        <th class="px-2 py-1 border">Run</th>
+                        <th class="px-2 py-1 border">H (m)</th>
+                        <th class="px-2 py-1 border">θ (°)</th>
+                        <th class="px-2 py-1 border">Q (m³/s)</th>
+                        <th class="px-2 py-1 border">Action</th>
+                    </tr>
+                `;
+                chart.data.datasets[0].data = [];
+                chart.options.scales.x.max = 1;
+                chart.options.scales.y.max = 0.05;
+                chart.update();
+            }
+        }
+        
+        // Reset experiment
+        function resetExperiment() {
+            experimentRunning = false;
+            startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Experiment';
+            startBtn.classList.remove('bg-yellow-600', 'hover:bg-yellow-700');
+            startBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            
+            // Reset to default values
+            headControlSlider.value = 30;
+            notchAngleSelect.value = 60;
+            updateWaterLevel();
+            displayAngle.textContent = '60°';
+        }
+        
+        // Event Listeners
+        headControlSlider.addEventListener('input', updateWaterLevel);
+        
+        fineTuneMinusBtn.addEventListener('click', () => {
+            headControlSlider.value = parseInt(headControlSlider.value) - 1;
+            updateWaterLevel();
+        });
+        
+        fineTunePlusBtn.addEventListener('click', () => {
+            headControlSlider.value = parseInt(headControlSlider.value) + 1;
+            updateWaterLevel();
+        });
+        
+        notchAngleSelect.addEventListener('change', () => {
+            const angle = notchAngleSelect.value;
+            displayAngle.textContent = `${angle}°`;
+            if (experimentRunning && autoCalculateCheckbox.checked) {
+                const head = hValueElement.textContent;
+                calculateDischarge(head);
+            }
+        });
+        
+        autoCalculateCheckbox.addEventListener('change', () => {
+            if (autoCalculateCheckbox.checked && experimentRunning) {
+                const head = hValueElement.textContent;
+                calculateDischarge(head);
+            }
+        });
+        
+        startBtn.addEventListener('click', () => {
+            experimentRunning = !experimentRunning;
+            if (experimentRunning) {
+                startBtn.innerHTML = '<i class="fas fa-pause mr-2"></i> Pause Experiment';
+                startBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                startBtn.classList.add('bg-yellow-600', 'hover:bg-yellow-700');
+                
+                // Initialize with current values
+                const head = hValueElement.textContent;
+                calculateDischarge(head);
+            } else {
+                startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Experiment';
+                startBtn.classList.remove('bg-yellow-600', 'hover:bg-yellow-700');
+                startBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            }
+        });
+        
+        addDataBtn.addEventListener('click', addDataPoint);
+        
+        resetBtn.addEventListener('click', resetExperiment);
+        
+        exportDataBtn.addEventListener('click', exportData);
+        
+        clearDataBtn.addEventListener('click', clearData);
+        
+        helpBtn.addEventListener('click', () => {
+            helpModal.classList.remove('hidden');
+        });
+        
+        closeHelp.addEventListener('click', () => {
+            helpModal.classList.add('hidden');
+        });
+        
+        // Close modal when clicking outside
+        helpModal.addEventListener('click', (e) => {
+            if (e.target === helpModal) {
+                helpModal.classList.add('hidden');
+            }
+        });
+        
+        // Initialize
+        updateWaterLevel();
+        displayAngle.textContent = `${notchAngleSelect.value}°`;
+    </script>
 </body>
-</html> 
+</html>
