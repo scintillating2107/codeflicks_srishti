@@ -88,4 +88,94 @@
     }
   ]
 }
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "After performing the V-notch experiment, what is the most likely reason the actual discharge is less than the theoretical discharge?",
+      "answers": {
+        "a": "The notch was too wide",
+        "b": "Water was too cold",
+        "c": "Energy losses due to friction and turbulence",
+        "d": "Incorrect stopwatch reading"
+      },
+      "explanations": {
+        "a": "Incorrect – notch width affects flow but doesn't explain lower discharge directly.",
+        "b": "Incorrect – temperature has a minor effect under standard conditions.",
+        "c": "Correct – real fluid losses reduce actual discharge. <a href='https://nptel.ac.in/courses/105103021'>Learn more</a>",
+        "d": "Incorrect – it affects time, not discharge directly."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which measurement most directly impacts the accuracy of the calculated discharge in a V-notch experiment?",
+      "answers": {
+        "a": "Time",
+        "b": "Angle of the notch",
+        "c": "Head (H) above the notch",
+        "d": "Notch thickness"
+      },
+      "explanations": {
+        "a": "Incorrect – time matters for volume collection but not as critical as head.",
+        "b": "Important, but typically fixed.",
+        "c": "Correct – small errors in H cause large errors in Q since Q ∝ H^5/2. <a href='https://www.engineeringenotes.com/hydraulic-machines/weirs/v-notch-weir-and-its-formula-hydraulic-machines/40782'>Reference</a>",
+        "d": "Incorrect – not the primary influence."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is typically plotted to verify the discharge relationship in the V-notch experiment?",
+      "answers": {
+        "a": "Q vs H^0.5",
+        "b": "H vs time",
+        "c": "Q vs H",
+        "d": "Q vs H^2.5"
+      },
+      "explanations": {
+        "a": "Incorrect – this is for orifice-type flow.",
+        "b": "Incorrect – not used to verify discharge relationship.",
+        "c": "Acceptable, but not linear for V-notch verification.",
+        "d": "Correct – Q ∝ H^(5/2) in V-notch theory. <a href='https://www.civilwala.com/weir-types-formula/'>Reference</a>"
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How is the coefficient of discharge (Cd) determined experimentally in this setup?",
+      "answers": {
+        "a": "By measuring pressure at the notch",
+        "b": "By comparing actual and theoretical discharge",
+        "c": "By calculating velocity head",
+        "d": "By checking water temperature"
+      },
+      "explanations": {
+        "a": "Incorrect – pressure is not directly used.",
+        "b": "Correct – Cd = Q_actual / Q_theoretical. <a href='https://en.wikipedia.org/wiki/Weir_(water)'>Learn more</a>",
+        "c": "Part of theory, but not enough alone.",
+        "d": "Incorrect – temperature doesn’t determine Cd."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If a graph of Q vs H^2.5 is a straight line, what does it indicate?",
+      "answers": {
+        "a": "Measurement error in head",
+        "b": "Incorrect formula used",
+        "c": "The experimental data follows theoretical prediction",
+        "d": "Water flow was unsteady"
+      },
+      "explanations": {
+        "a": "Incorrect – straight line indicates correctness.",
+        "b": "Incorrect – the formula is validated by the straight line.",
+        "c": "Correct – linearity confirms Q ∝ H^2.5 relationship.",
+        "d": "Incorrect – unsteady flow would create a scatter plot."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    }
+  ]
+}
 
