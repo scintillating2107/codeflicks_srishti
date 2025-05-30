@@ -1,121 +1,66 @@
 ### Link your theory in here
-What is a V-Notch Weir?
-A V-notch weir (also called a triangular notch) is a device used to measure the flow rate of liquid, typically water, in open channels or laboratory setups. It consists of a thin plate with a V-shaped opening through which the water flows.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-Notch Flow Rate Experiment - Theory</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .formula {
+            font-weight: bold;
+            color: #c0392b;
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
 
-Principle
-The flow rate over a V-notch weir is related to the head (H) of water above the vertex (lowest point) of the notch. The shape of the notch causes the flow to vary with the head in a nonlinear way.
+    <h1>V-Notch Flow Rate Experiment - Theory</h1>
 
-Flow Characteristics
-The discharge flows under free-flow conditions (no submergence downstream).
+    <h2>1. Objective</h2>
+    <p>To determine the flow rate of water using a V-notch and compare it with theoretical discharge calculations.</p>
 
-The water surface forms a nappe flowing over the notch.
+    <h2>2. Introduction</h2>
+    <p>A V-notch is a triangular-shaped weir used for measuring small flow rates of liquids in open channels. The discharge over a V-notch depends on the head of liquid above the vertex of the notch. It is more sensitive than a rectangular notch, especially for low flows.</p>
 
-The flow rate depends on the angle of the V-notch (θ) and the head (H).
+    <h2>3. Principle</h2>
+    <p>The V-notch operates on the principle that the discharge is proportional to the head of water raised to the power of 2.5. The shape causes the width of the flow area to increase with height, making it effective for small flows.</p>
 
-Derivation of Discharge Formula
-For a V-notch with an angle 
-𝜃
-θ, the theoretical discharge 
-𝑄
-Q can be derived by integrating the velocity of flow over the effective flow area at each infinitesimal section of the notch.
+    <h2>4. Formula for Discharge</h2>
+    <p>The theoretical discharge over a V-notch is given by the formula:</p>
+    <p class="formula">Q = (8/15) × Cd × √(2g) × tan(θ/2) × H<sup>5/2</sup></p>
 
-The general formula for the discharge over a V-notch weir is:
+    <h3>Where:</h3>
+    <ul>
+        <li><strong>Q</strong> = Discharge (m³/s)</li>
+        <li><strong>Cd</strong> = Coefficient of discharge (dimensionless)</li>
+        <li><strong>g</strong> = Acceleration due to gravity (9.81 m/s²)</li>
+        <li><strong>θ</strong> = Angle of the V-notch (in radians)</li>
+        <li><strong>H</strong> = Head of water above the notch vertex (in meters)</li>
+    </ul>
 
-𝑄
-=
-8
-15
-𝐶
-𝑑
-2
-𝑔
-tan
-⁡
-(
-𝜃
-2
-)
-𝐻
-5
-/
-2
-Q= 
-15
-8
-​
- C 
-d
-​
-  
-2g
-​
- tan( 
-2
-θ
-​
- )H 
-5/2
- 
-Where:
+    <h2>5. Assumptions</h2>
+    <ul>
+        <li>Flow is steady and free from turbulence.</li>
+        <li>The fluid is incompressible.</li>
+        <li>The velocity of approach is negligible.</li>
+        <li>The head is measured from the vertex of the notch.</li>
+    </ul>
 
-𝑄
-Q = Discharge or flow rate (m³/s)
+    <h2>6. Applications</h2>
+    <ul>
+        <li>Used in labs and field setups to measure small flows in channels.</li>
+        <li>Widely used in irrigation, sewage treatment, and environmental monitoring.</li>
+    </ul>
 
-𝐶
-𝑑
-C 
-d
-​
-  = Coefficient of discharge (dimensionless), accounts for losses and velocity distribution (usually between 0.58 to 0.62)
-
-𝑔
-g = Acceleration due to gravity (9.81 m/s²)
-
-𝜃
-θ = Angle of the V-notch (degrees or radians)
-
-𝐻
-H = Head or height of the water surface above the notch vertex (m)
-
-Explanation of Terms:
-Head (H): The vertical height of the water surface above the vertex of the V-notch.
-
-Coefficient of Discharge (Cd): Accounts for energy losses due to viscosity, turbulence, and flow contraction effects. It is experimentally determined.
-
-tan
-⁡
-(
-𝜃
-2
-)
-tan( 
-2
-θ
-​
- ): Accounts for the geometry of the V-notch.
-
-Significance of the Formula:
-The discharge 
-𝑄
-Q varies as 
-𝐻
-5
-/
-2
-H 
-5/2
- , meaning small changes in head lead to larger changes in flow rate.
-
-V-notch weirs are especially useful for measuring low flow rates because the flow area changes significantly with head.
-
-This method allows accurate flow measurement with minimal equipment.
-
-Assumptions:
-Flow is steady and uniform.
-
-No downstream submergence (free flow over the notch).
-
-The flow is incompressible and non-viscous.
-
-Atmospheric pressure acts on the free surface.
-
+</body>
+</html>
