@@ -12,6 +12,7 @@
             background: linear-gradient(0deg, rgba(34, 193, 195, 0.7) 0%, rgba(45, 120, 253, 0.7) 100%);
             background-size: 400% 400%;
             animation: waterFlow 8s ease infinite;
+            animation-play-state: running;
         }
         @keyframes waterFlow {
             0% { background-position: 0% 50%; }
@@ -33,6 +34,29 @@
         .water-surface {
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .horizontal-flow {
+            animation: horizontalWaterFlow 3s linear infinite;
+            background-size: 200% 100%;
+            opacity: 0.5;
+            animation-play-state: running;
+        }
+        @keyframes horizontalWaterFlow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .paused-animation {
+            animation-play-state: paused !important;
+        }
+        .water-molecule {
+            position: absolute;
+            border-radius: 50% / 40%;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 40% 60%, #4fc3f7 70%, #1976d2 100%);
+            box-shadow: 8px 0 12px 0 rgba(33,150,243,0.18), 0 0 2px 0 #1976d2;
+            opacity: 0.32;
+            filter: blur(0.2px);
+            transition: opacity 0.3s;
         }
     </style>
 </head>
@@ -70,10 +94,28 @@
                     <div class="absolute bottom-16 right-0 w-8 h-full bg-gray-400 channel-side"></div>
                     
                     <!-- V-Notch Weir -->
-                    <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-32 notch metal-texture"></div>
+                    <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-32 flex items-end justify-center">
+                        <svg id="vNotchSVG" width="100%" height="100%" viewBox="0 0 128 128">
+                            <polygon id="vNotchPolygon" fill="url(#metalGradient)" stroke="#757575" stroke-width="2" />
+                            <defs>
+                                <linearGradient id="metalGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#b1b1b1"/>
+                                    <stop offset="50%" stop-color="#9e9e9e"/>
+                                    <stop offset="51%" stop-color="#757575"/>
+                                    <stop offset="100%" stop-color="#616161"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     
                     <!-- Water -->
                     <div id="water" class="absolute bottom-16 left-8 right-8 water-animation water-level" style="height: 30%;">
+                        <!-- Horizontal Flow Animation -->
+                        <div class="absolute top-2 left-0 right-0 h-3/4 overflow-hidden pointer-events-none">
+                            <div class="horizontal-flow h-full w-[200%]" style="background: linear-gradient(90deg, rgba(34,193,195,0.5) 0%, rgba(45,120,253,0.5) 100%);"></div>
+                        </div>
+                        <!-- Water Molecules -->
+                        <div id="moleculeContainer" class="absolute top-0 left-0 w-full h-full pointer-events-none"></div>
                         <div class="absolute top-0 left-0 right-0 h-2 water-surface"></div>
                     </div>
                     
@@ -154,7 +196,7 @@
                     
                     <div class="bg-gray-100 p-4 rounded-lg border border-gray-300 space-y-2">
                         <button id="startBtn" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md flex items-center justify-center">
-                            <i class="fas fa-play mr-2"></i> Start Experiment
+                            <i class="fas fa-play mr-2"></i> Start Simulation
                         </button>
                         <button id="addDataBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md flex items-center justify-center">
                             <i class="fas fa-plus mr-2"></i> Record Data
@@ -314,6 +356,43 @@
         </div>
     </div>
     
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-md p-8 text-center relative">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Welcome to the Virtual Fluid Mechanics Lab!</h2>
+            <p class="mb-6 text-gray-700">This simulation lets you explore flow rate measurement using a V-notch weir. Adjust the controls, collect data, and visualize the relationship between head and discharge.<br><br><span class="font-semibold text-blue-600">Ready to begin?</span></p>
+            <button id="welcomeStartBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-lg font-semibold shadow">
+                Start Experiment
+            </button>
+        </div>
+    </div>
+
+    <!-- Introduction Modal -->
+    <div id="introModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-md p-8 text-center relative">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Set Initial Parameters</h2>
+            <form id="introForm" class="mb-6 space-y-4">
+                <div class="flex flex-col items-start">
+                    <label for="introHead" class="font-medium text-gray-700 mb-1">Initial Head (H) [0.10 - 0.80 m]:</label>
+                    <input id="introHead" type="number" min="0.10" max="0.80" step="0.01" value="0.30" class="w-full border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+                <div class="flex flex-col items-start">
+                    <label for="introAngle" class="font-medium text-gray-700 mb-1">Notch Angle (θ):</label>
+                    <select id="introAngle" class="w-full border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="30">30°</option>
+                        <option value="45">45°</option>
+                        <option value="60" selected>60°</option>
+                        <option value="90">90°</option>
+                        <option value="120">120°</option>
+                    </select>
+                </div>
+            </form>
+            <button id="startIntroBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-lg font-semibold shadow">
+                Continue
+            </button>
+        </div>
+    </div>
+    
     <script>
         // DOM Elements
         const headControlSlider = document.getElementById('headControl');
@@ -353,7 +432,12 @@
                     backgroundColor: 'rgba(59, 130, 246, 0.7)',
                     borderColor: 'rgba(59, 130, 246, 1)',
                     borderWidth: 1,
-                    pointRadius: 6
+                    pointRadius: 6,
+                    showLine: true,
+                    fill: false,
+                    tension: 0,
+                    borderDash: [],
+                    borderWidth: 2,
                 }]
             },
             options: {
@@ -573,7 +657,7 @@
         // Reset experiment
         function resetExperiment() {
             experimentRunning = false;
-            startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Experiment';
+            startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
             startBtn.classList.remove('bg-yellow-600', 'hover:bg-yellow-700');
             startBtn.classList.add('bg-green-600', 'hover:bg-green-700');
             
@@ -598,7 +682,7 @@
         });
         
         notchAngleSelect.addEventListener('change', () => {
-            const angle = notchAngleSelect.value;
+            const angle = parseInt(notchAngleSelect.value);
             displayAngle.textContent = `${angle}°`;
             if (experimentRunning && autoCalculateCheckbox.checked) {
                 const head = hValueElement.textContent;
@@ -616,15 +700,16 @@
         startBtn.addEventListener('click', () => {
             experimentRunning = !experimentRunning;
             if (experimentRunning) {
-                startBtn.innerHTML = '<i class="fas fa-pause mr-2"></i> Pause Experiment';
+                setWaterAnimationPaused(false); // Start water/molecule animation
+                startBtn.innerHTML = '<i class="fas fa-pause mr-2"></i> Pause Simulation';
                 startBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
                 startBtn.classList.add('bg-yellow-600', 'hover:bg-yellow-700');
-                
                 // Initialize with current values
                 const head = hValueElement.textContent;
                 calculateDischarge(head);
             } else {
-                startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Experiment';
+                setWaterAnimationPaused(true); // Pause water/molecule animation
+                startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
                 startBtn.classList.remove('bg-yellow-600', 'hover:bg-yellow-700');
                 startBtn.classList.add('bg-green-600', 'hover:bg-green-700');
             }
@@ -653,9 +738,138 @@
             }
         });
         
-        // Initialize
-        updateWaterLevel();
-        displayAngle.textContent = `${notchAngleSelect.value}°`;
+        // V-Notch SVG dynamic angle
+        function updateVNotchAngle(angleDeg) {
+            const svg = document.getElementById('vNotchSVG');
+            const poly = document.getElementById('vNotchPolygon');
+            if (!svg || !poly) return;
+            // SVG size
+            const w = 128, h = 128;
+            // Apex at bottom center
+            const apexX = w / 2, apexY = h;
+            // Calculate left and right points based on angle
+            const theta = angleDeg * Math.PI / 180;
+            const halfBase = Math.tan(theta/2) * (h-8); // 8px margin at top
+            let x1 = apexX - halfBase;
+            let x2 = apexX + halfBase;
+            // Clamp to SVG bounds
+            x1 = Math.max(0, Math.min(w, x1));
+            x2 = Math.max(0, Math.min(w, x2));
+            const yTop = 8;
+            // Points: left top, right top, apex
+            const points = `${x1},${yTop} ${x2},${yTop} ${apexX},${apexY}`;
+            poly.setAttribute('points', points);
+        }
+
+        // Initial V-notch angle
+        updateVNotchAngle(parseInt(document.getElementById('notchAngle').value));
+
+        // Update V-notch when angle changes
+        notchAngleSelect.addEventListener('change', () => {
+            const angle = parseInt(notchAngleSelect.value);
+            displayAngle.textContent = `${angle}°`;
+            updateVNotchAngle(angle);
+            if (experimentRunning && autoCalculateCheckbox.checked) {
+                const head = hValueElement.textContent;
+                calculateDischarge(head);
+            }
+        });
+
+        // Welcome and Parameter Modals Logic
+        const welcomeModal = document.getElementById('welcomeModal');
+        const welcomeStartBtn = document.getElementById('welcomeStartBtn');
+        const introModal = document.getElementById('introModal');
+        const startIntroBtn = document.getElementById('startIntroBtn');
+        const introHead = document.getElementById('introHead');
+        const introAngle = document.getElementById('introAngle');
+
+        // Show welcome modal on load and pause water
+        window.addEventListener('DOMContentLoaded', () => {
+            welcomeModal.classList.remove('hidden');
+            setTimeout(initMolecules, 400); // ensure molecules are created and animation loop is running
+            setWaterAnimationPaused(true);
+        });
+
+        // On welcome modal button, show parameter modal (water still paused)
+        welcomeStartBtn.addEventListener('click', () => {
+            welcomeModal.classList.add('hidden');
+            introModal.classList.remove('hidden');
+        });
+
+        // On parameter modal button, set parameters and hide, but keep water paused
+        startIntroBtn.addEventListener('click', () => {
+            // Clamp and set head value
+            let headVal = parseFloat(introHead.value);
+            if (isNaN(headVal) || headVal < 0.10) headVal = 0.10;
+            if (headVal > 0.80) headVal = 0.80;
+            // Map head to slider value (slider 10-80 for 0.10-0.80)
+            const sliderVal = Math.round((headVal - 0.10) * 100);
+            headControlSlider.value = sliderVal;
+            updateWaterLevel();
+            // Set angle
+            notchAngleSelect.value = introAngle.value;
+            displayAngle.textContent = `${introAngle.value}°`;
+            updateVNotchAngle(parseInt(introAngle.value));
+            introModal.classList.add('hidden');
+            setWaterAnimationPaused(true); // keep paused until Start Simulation
+        });
+
+        // --- Water Animation Control and Molecule Animation ---
+        let moleculesAnimationActive = false;
+        const moleculeContainer = document.getElementById('moleculeContainer');
+        const moleculeCount = 18;
+        const molecules = [];
+        const waterWidth = moleculeContainer.offsetWidth || 400; // fallback width
+        const waterHeight = moleculeContainer.offsetHeight || 80; // fallback height
+
+        function setWaterAnimationPaused(paused) {
+            // Pause/resume CSS animations
+            document.getElementById('water').classList.toggle('paused-animation', paused);
+            document.querySelectorAll('.horizontal-flow').forEach(el => el.classList.toggle('paused-animation', paused));
+            // Pause/resume molecules
+            moleculesAnimationActive = !paused;
+        }
+
+        function createMolecule() {
+            const molecule = document.createElement('div');
+            molecule.className = 'water-molecule';
+            const width = 7 + Math.random() * 4; // 7-11px
+            const height = 4 + Math.random() * 2.5; // 4-6.5px
+            const top = Math.random() * 60 + 15; // stay away from edges
+            molecule.style.width = `${width}px`;
+            molecule.style.height = `${height}px`;
+            molecule.style.top = `${top}%`;
+            molecule.style.left = `${Math.random() * 100}%`;
+            molecule.style.opacity = 0.32;
+            molecule.style.zIndex = 2;
+            moleculeContainer.appendChild(molecule);
+            return {
+                el: molecule,
+                width,
+                height,
+                top,
+                left: Math.random() * 100,
+                speed: 0.13 + Math.random() * 0.13
+            };
+        }
+
+        function animateMolecules() {
+            if (moleculesAnimationActive) {
+                molecules.forEach(mol => {
+                    mol.left += mol.speed;
+                    if (mol.left > 100) mol.left = -5;
+                    mol.el.style.left = `${mol.left}%`;
+                });
+            }
+            requestAnimationFrame(animateMolecules);
+        }
+
+        function initMolecules() {
+            for (let i = 0; i < moleculeCount; i++) {
+                molecules.push(createMolecule());
+            }
+            animateMolecules();
+        }
     </script>
 </body>
 </html>
