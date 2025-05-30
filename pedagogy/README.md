@@ -79,6 +79,95 @@
 
 <h4> [2. Learning Objectives ](#LO)
 
+1. Knowledge-Based Objectives
+Understand the principle of flow measurement using a V-notch weir.
+
+Recognize the relationship between head of water and flow rate in a V-notch weir.
+
+Identify the different types of notches (e.g., rectangular, triangular/V-notch) and their applications.
+
+2. Skill-Based Objectives
+Accurately set up and operate the V-notch flow measurement apparatus.
+
+Measure the head over the notch using appropriate instruments (e.g., point gauge or scale).
+
+Record experimental data systematically and calculate flow rate using standard V-notch formula.
+
+3. Analytical Objectives
+Analyze the relationship between measured head and flow rate.
+
+Compare experimental flow rate with theoretical values.
+
+Identify possible sources of error in the measurement and suggest improvements.
+
+4. Application-Based Objectives
+Apply the V-notch method to measure flow in open channels or laboratory settings.
+
+Use the empirical formula for flow through a V-notch:
+
+𝑄
+=
+8
+15
+𝐶
+𝑑
+tan
+⁡
+(
+𝜃
+2
+)
+2
+𝑔
+𝐻
+5
+/
+2
+Q= 
+15
+8
+​
+ C 
+d
+​
+ tan( 
+2
+θ
+​
+ ) 
+2g
+​
+ H 
+5/2
+ 
+where:
+
+𝑄
+Q = flow rate,
+
+𝐶
+𝑑
+C 
+d
+​
+  = coefficient of discharge,
+
+𝜃
+θ = notch angle,
+
+𝐻
+H = head over the notch,
+
+𝑔
+g = acceleration due to gravity.
+
+5. Safety and Best Practice Objectives
+Follow laboratory safety protocols while performing the experiment.
+
+Ensure proper calibration and maintenance of equipment for accurate results.
+
+
+
 
 
  
