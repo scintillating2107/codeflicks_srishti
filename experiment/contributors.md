@@ -3,9 +3,12 @@ EMPTY
 ### Subject Matter Experts
 | SNo. | Name | Email | Institute | ID |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | Dr. Ravish | ravishrajput@reck.ac.in | Rajkiya Engineering College,Kannauj |  |
+| 1 | Dr. Ravish | ravishrajput@reck.ac.in | Rajkiya Engineering College,Kannauj | Department of Applied Sciences & Humanities |
 
 ### Developers
 | SNo. | Name | Email | Institute | ID |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+| 1 | Srishti Singh | srishti2107singh@gmail.com | Rajkiya Engineering College,Kannauj | Computer Science & Engineering |
+| 2 | Manya Gupta | manyagupta9140@gmail.com | Rajkiya Engineering College,Kannauj | Computer Science & Engineering |
+| SNo. | Prakhar Mishra | Email | Rajkiya Engineering College,Kannauj | Computer Science & Engineering |
+| SNo. | Himanshi |  | Rajkiya Engineering College,Kannauj | Electronics Engineering |
