@@ -99,34 +99,26 @@
 4. Analytical Skills
      Use the theoretical formula for discharge over a V-notch:
 
-Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
+     Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
 
  
-where 
-𝑄
-Q is the discharge, 
-𝐶
-𝑑
-C 
-d
-​
-  is the coefficient of discharge, 
-𝜃
-θ is the notch angle, and 
-𝐻
-H is the head.
+     where 
+       𝑄 is the discharge, 
+       𝐶𝑑 is the coefficient of discharge, 
+       𝜃 is the notch angle, and 
+       𝐻 is the head.
 
-Calculate both theoretical and actual discharge, and determine the coefficient of discharge (Cd) experimentally.
+     Calculate both theoretical and actual discharge, and determine the coefficient of discharge (Cd) experimentally.
 
 5. Error Analysis and Interpretation
-Compare theoretical and actual discharge to understand sources of error and deviation.
+    Compare theoretical and actual discharge to understand sources of error and deviation.
 
-Interpret the impact of fluid dynamics factors (viscosity, turbulence, surface tension) on results.
+    Interpret the impact of fluid dynamics factors (viscosity, turbulence, surface tension) on results.
 
 6. Application and Real-World Relevance
-Relate the use of V-notch weirs to real-world flow measurement in open channels and irrigation systems.
+   Relate the use of V-notch weirs to real-world flow measurement in open channels and irrigation systems.
 
-Understand advantages and limitations of V-notch weirs in practical applications.
+   Understand advantages and limitations of V-notch weirs in practical applications.
 <h4> [3. Instructional Strategy](#IS)
 1.🎯 Learning Outcome Orientation
 Begin by clearly stating the learning objectives:
