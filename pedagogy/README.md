@@ -15,22 +15,24 @@
 
 
 <h4> [1. Focus Area](#LO)
-  1. Objective
-To measure and calculate the flow rate of water using a V-notch weir.
 
-To understand the relationship between head (height of water above notch) and flow rate.
+  
+1. Objective
+     To measure and calculate the flow rate of water using a V-notch weir.
+
+     To understand the relationship between head (height of water above notch) and flow rate.
 
 2. Principle
-Based on the application of Bernoulli’s equation and flow measurement through an open channel using a triangular (V-notch) weir.
+    Based on the application of Bernoulli’s equation and flow measurement through an open channel using a triangular (V-notch) weir.
 
-The discharge through a V-notch is a function of the head over the notch.
+    The discharge through a V-notch is a function of the head over the notch.
 
 3. Key Concepts
-Open channel flow
+    Open channel flow
 
-Hydraulics of weirs
+    Hydraulics of weirs
 
-Discharge coefficient (Cd)
+    Discharge coefficient (Cd)
 
 Empirical discharge equation for V-notch weirs
 
