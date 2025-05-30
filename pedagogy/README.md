@@ -80,258 +80,128 @@
 <h4> [2. Learning Objectives ](#LO)
 
 1. Knowledge-Based Objectives
-Understand the principle of flow measurement using a V-notch weir.
+   Understand the principle of flow measurement using a V-notch weir.
 
-Recognize the relationship between head of water and flow rate in a V-notch weir.
+   Recognize the relationship between head of water and flow rate in a V-notch weir.
 
-Identify the different types of notches (e.g., rectangular, triangular/V-notch) and their applications.
+   Identify the different types of notches (e.g., rectangular, triangular/V-notch) and their applications.
 
 2. Skill-Based Objectives
-Accurately set up and operate the V-notch flow measurement apparatus.
+   Accurately set up and operate the V-notch flow measurement apparatus.
 
-Measure the head over the notch using appropriate instruments (e.g., point gauge or scale).
+   Measure the head over the notch using appropriate instruments (e.g., point gauge or scale).
 
-Record experimental data systematically and calculate flow rate using standard V-notch formula.
+   Record experimental data systematically and calculate flow rate using standard V-notch formula.
 
 3. Analytical Objectives
-Analyze the relationship between measured head and flow rate.
+   Analyze the relationship between measured head and flow rate.
 
-Compare experimental flow rate with theoretical values.
+   Compare experimental flow rate with theoretical values.
 
-Identify possible sources of error in the measurement and suggest improvements.
+   Identify possible sources of error in the measurement and suggest improvements.
 
 4. Application-Based Objectives
-Apply the V-notch method to measure flow in open channels or laboratory settings.
+   Apply the V-notch method to measure flow in open channels or laboratory settings.
 
-Use the empirical formula for flow through a V-notch:
+   Use the empirical formula for flow through a V-notch:
 
-𝑄
-=
-8
-15
-𝐶
-𝑑
-tan
-⁡
-(
-𝜃
-2
-)
-2
-𝑔
-𝐻
-5
-/
-2
-Q= 
-15
-8
-​
- C 
-d
-​
- tan( 
-2
-θ
-​
- ) 
-2g
-​
- H 
-5/2
- 
-where:
+   Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
 
-𝑄
-Q = flow rate,
+   where:
 
-𝐶
-𝑑
-C 
-d
-​
-  = coefficient of discharge,
+   𝑄 = flow rate,
 
-𝜃
-θ = notch angle,
+   𝐶𝑑 = coefficient of discharge,
 
-𝐻
-H = head over the notch,
+   𝜃 = notch angle,
 
-𝑔
-g = acceleration due to gravity.
+   𝐻 = head over the notch,
+
+   𝑔 = acceleration due to gravity.
 
 5. Safety and Best Practice Objectives
-Follow laboratory safety protocols while performing the experiment.
+   Follow laboratory safety protocols while performing the experiment.
 
-Ensure proper calibration and maintenance of equipment for accurate results.
-
-
+   Ensure proper calibration and maintenance of equipment for accurate results.
 
 
-
- 
-  
 <h4> [4. Task & Assessment Questions](#AQ)
 ✅ Task Overview
-Students are required to:
-    Set up the experimental apparatus, including the V-notch tank, flow supply, and measurement instruments.
-    Measure the head (H) of water over the V-notch for various flow rates using a point gauge or scale.
-    Collect and measure the volume of water discharged over a fixed time to determine actual discharge.
-    Use the theoretical formula for V-notch flow to calculate theoretical discharge:
-                                       𝑄=8/15𝐶𝑑2𝑔tan(𝜃2)𝐻 5/2
-    Determine the coefficient of discharge (Cd) by comparing theoretical and actual values.
-    Plot a graph of discharge (Q) vs. head (H) and analyze the trend.
-    Identify possible sources of error and suggest improvements.
-    Submit a detailed lab report with observations, calculations, graphs, and conclusions.
 
-📝 Assessment Questions
-🔹 Conceptual Understanding
-What is a V-notch weir, and how does it function in measuring flow?
-Why is the discharge over a V-notch weir proportional to H 5/2?
-Explain the significance of the coefficient of discharge (Cd).
-What factors influence the value of Cd in an experiment?
-Why is a V-notch weir more suitable than a rectangular weir for low flow rates?
-🔹 Theoretical Application
-Derive the formula for discharge over a V-notch weir.
-Calculate the theoretical discharge if the head over a 90° V-notch is 0.15 m, and 
-Cd =0.6.
-How does changing the notch angle affect the flow rate and sensitivity of the weir?
-🔹 Practical/Experimental Skills
-Describe the steps taken to ensure accurate measurement of the head.
-What precautions should be taken to minimize reading and measurement errors?
-How would you determine actual discharge using volume and time?
-If actual discharge is consistently less than theoretical discharge, what could be the possible reasons?
-🔹 Data Analysis and Interpretation
-How did your experimental data compare with theoretical values?
-What shape was the graph of Q vs. H, and why?
-What trends did you observe as the head increased?
-How did you calculate the coefficient of discharge from your experimental data?
-🔹 Error Analysis and Improvements
-Identify at least three sources of error in your experiment.
-How could the experimental setup be modified to increase accuracy?
-What are the implications of inaccurate flow measurement in real-life engineering projects?
-🔹 Extension/Application Questions
-Where in real life are V-notch weirs commonly used, and why?
-If you had to measure very high flow rates, would a V-notch be suitable? Why or why not?
-Suggest an alternative method for flow measurement and compare it to the V-notch method.
-<h4> [5. Simulator Interactions](#SI)
-Simulator Interactions for V-Notch Weir Flow Rate Experiment
-1. Start the Simulation
-Select the V-notch weir experiment from the simulation menu.
+  🔧 Task: Determination of Flow Rate Using V-Notch Weir
+  Objective:
+  To determine the flow rate of water by using a V-notch (triangular notch) weir and verify it with the theoretical formula.
 
-Read the theory and objective to understand what parameters will be measured (usually flow rate vs. head).
+  Apparatus Required:
 
-2. Set Up the Equipment (virtually)
-Assemble the water tank, V-notch weir plate, and collection tank if needed.
+  V-notch weir tank
 
-Place a point gauge or scale at the notch to measure the water head (height above the notch vertex).
+  Flow control valve
 
-3. Input Initial Parameters
-Choose the notch angle (typically 60°, 90°, or 120°).
+  Collecting tank
 
-Select flow rate (some simulators let you control it manually or through a valve).
+  Stopwatch
 
-4. Start Flow
-Open the valve or start the pump to let water flow over the V-notch.
+  Scale or depth gauge
 
-Wait for steady state (a constant water head).
+  Measuring cylinder (optional)
 
-5. Measure Head (H)
-Use the point gauge or simulated scale to measure the height of water above the notch vertex.
+  Theory:
+  A V-notch weir is used to measure flow rates in open channels. The discharge 
 
-Record the value (often in cm or m).
+  Q over a V-notch is given by:
 
-6. Record Flow Rate
-In some simulators, flow rate is auto-calculated.
-
-In others, you may need to collect water in a virtual container and measure volume vs. time.
-
-Formula to calculate theoretical flow rate:
-
-𝑄
-=
-8
-15
-𝐶
-𝑑
-2
-𝑔
-tan
-⁡
-(
-𝜃
-2
-)
-𝐻
-5
-/
-2
-Q= 
-15
-8
-​
- C 
-d
-​
-  
-2g
-​
- tan( 
-2
-θ
-​
- )H 
-5/2
+  Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
  
-where:
+  Where:
 
-𝑄
-Q = discharge
 
-𝐶
-𝑑
-C 
-d
-​
-  = coefficient of discharge (typically given or calculated)
+  Q = Discharge (flow rate)
 
-𝑔
-g = acceleration due to gravity
+  𝐶𝑑 = Coefficient of discharge
 
-𝜃
-θ = notch angle
+  𝜃 = Angle of the notch (usually 90°)
 
-𝐻
-H = head
+  𝑔 = Acceleration due to gravity
 
-7. Repeat for Different Heads
-Change the flow rate (adjust valve).
+  𝐻 = Head of water above the bottom of the notch
 
-Measure new head and corresponding discharge.
+✅ Assessment Questions
+  A. Conceptual Understanding
+  What is the purpose of using a V-notch weir in flow measurement?
 
-8. Plot Results (optional)
-Many simulators let you plot Q vs H or 
-𝑄
-Q vs 
-𝐻
-5
-/
-2
-H 
-5/2
-  to verify linearity and calculate 
-𝐶
-𝑑
-C 
-d
-​
- .
+  Why is a 90° angle commonly used in V-notch weirs?
 
-9. Download or Save Data
-Export data table if available.
+  What is the significance of the coefficient of discharge 
+  𝐶𝑑 ?
 
-Use results to compare experimental and theoretical discharge.
+  How does the shape of the notch affect the flow rate measurement?
+
+  Why is the head measured from the bottom of the notch?
+
+  B. Practical Application
+  Describe the procedure to measure the head over the V-notch.
+
+  How would you ensure accurate readings during the experiment?
+
+  What are the potential sources of error in this experiment?
+
+  How would you calibrate the weir for higher accuracy?
+
+  How can this method be applied in real-world irrigation or wastewater systems?
+
+  C. Calculation and Analysis
+  Derive the formula for discharge over a V-notch.
+
+  If the head over the notch is 0.15 m and the notch angle is 90°, calculate the theoretical discharge assuming 
+  𝐶𝑑 = 0.6
+  
+  Compare the theoretical and actual flow rate obtained. What could explain any differences?
+
+  How does changing the head affect the flow rate in a V-notch weir?
+
+  What is the impact of surface tension and viscosity in small-scale V-notch flow measurements?
+
 
 
     
