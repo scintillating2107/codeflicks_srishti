@@ -72,6 +72,8 @@
    Optionally, compare with actual discharge using volumetric method.
 
 7. Applications
+
+ 
    Used in irrigation channels, wastewater treatment plants, and hydrology studies for accurate flow measurement.
 
 
