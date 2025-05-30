@@ -34,52 +34,45 @@
 
     Discharge coefficient (Cd)
 
-Empirical discharge equation for V-notch weirs
+    Empirical discharge equation for V-notch weirs
 
 4. Formula Used
-Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
-Where:
+    Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
+    Where:
 
 
-Q = Discharge (m³/s)
+    Q = Discharge (m³/s)
 
-𝐶𝑑
-​
-  = Coefficient of discharge
+    𝐶𝑑 = Coefficient of discharge
 
-𝑔
-= Acceleration due to gravity (9.81 m/s²)
+    𝑔 = Acceleration due to gravity (9.81 m/s²)
 
-𝜃
-= Angle of the V-notch
+    𝜃 = Angle of the V-notch
 
-𝐻
-= Head of water above the notch crest (m)
+    𝐻 = Head of water above the notch crest (m)
 
 5. Apparatus
-V-notch weir tank setup
+   V-notch weir tank setup
 
-Measuring scale
+   Measuring scale
 
-Stopwatch (if measuring over time)
+   Stopwatch (if measuring over time)
 
-Collection tank (optional, for volumetric validation)
+   Collection tank (optional, for volumetric validation)
 
 6. Experimental Procedure (Brief)
-Set up the V-notch weir in the channel.
+   Set up the V-notch weir in the channel.
 
-Allow water to flow and reach a steady state.
+   Allow water to flow and reach a steady state.
 
-Measure the head 
-𝐻
-above the notch.
+   Measure the head(H) above the notch.
 
-Calculate theoretical discharge using the formula.
+   Calculate theoretical discharge using the formula.
 
-Optionally, compare with actual discharge using volumetric method.
+   Optionally, compare with actual discharge using volumetric method.
 
 7. Applications
-Used in irrigation channels, wastewater treatment plants, and hydrology studies for accurate flow measurement.
+   Used in irrigation channels, wastewater treatment plants, and hydrology studies for accurate flow measurement.
 
 
 <h4> [2. Learning Objectives ](#LO)
