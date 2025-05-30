@@ -78,71 +78,55 @@
 
 
 <h4> [2. Learning Objectives ](#LO)
-1. 🔬 Understanding Open Channel Flow Principles
-   A major learning objective is to provide a deep conceptual understanding of open channel flow, where the water surface is exposed to atmospheric pressure, as 
-   opposed to enclosed pipe flow.
-   Comprehend the difference between open channel flow and pressurized flow.
-   Understand how gravitational forces, rather than pressure differences, govern the motion of water in open channels.
-   Learn the concept of free surface flow, and how the head (height of fluid above a reference point) influences discharge.
-2. 📐 Familiarization with Flow Measuring Devices – The V-Notch Weir
-   This experiment introduces students to a commonly used hydraulic structure – the V-notch weir – used for flow measurement.
-   Understand the purpose and function of a V-notch weir in regulating and measuring flow.
-   Study the geometry of the V-notch, including notch angle and crest height, and how it affects flow rate.
-   Recognize the advantages of using a V-notch (especially for small discharges) compared to other types of weirs (e.g., rectangular or trapezoidal).
-3. 📊 Application of Theoretical Hydraulic Formulas
-   One key objective is to bridge theory and practice by using well-established hydraulic equations.
-   Learn and apply the discharge equation for a V-notch:
-                                            Q=15/8Cd2g​tan(2θ​)H 5/2
-   Understand each parameter:
-   Q: Discharge
-   H: Head (height above notch)
-   θ: Angle of the notch
-   Cd: Coefficient of discharge
-   g: Acceleration due to gravity
-   Grasp the concept of theoretical vs. actual discharge and the significance of empirical corrections through 𝐶d
-4. 🧪 Hands-On Experience in Experimental Fluid Mechanics
-   Students gain practical skills in setting up and conducting a hydraulic experiment, including precise data collection and interpretation.
-   Learn how to set up a flow channel with a V-notch weir and maintain steady flow conditions.
-   Use tools such as point gauges, piezometers, or scales to measure water levels (head) accurately.
-   Develop the ability to take repeated measurements, improve accuracy, and ensure repeatability.
-5. 📉 Data Collection, Analysis, and Graphical Interpretation
-   Another essential objective is to foster skills in data handling, processing, and graphical representation.
-   Record measured heads and corresponding discharges.
-   Plot discharge (Q) vs. head (H) graphs and analyze the shape of the curve (typically, discharge varies with H 5/2).
-   Calculate the coefficient of discharge by comparing experimental results with theoretical values.
-   Use curve fitting or regression to validate the head-discharge relationship.
-   Develop error tables and uncertainty estimates, acknowledging instrument and reading limitations.
-6. ⚙️ Understanding and Applying the Coefficient of Discharge (Cd)
-Learn why real-world flow measurements deviate from ideal theory due to factors like:
-   Viscosity
-   Surface tension
-   Flow separation
-   Air entrainment      
-   Understand how Cd compensates for these losses and how it is experimentally determined.
-   Analyze how different factors affect Cd, such as notch angle, flow conditions, and water quality.
-7. 🧠 Developing Critical Thinking and Analytical Skills
-This experiment encourages analytical thinking by requiring students to compare theory with practice and evaluate discrepancies.
-   Learn how to identify and explain errors in experimental results.
-   Assess causes of deviation, such as:
-   Improper instrument calibration
-   Turbulent or unsteady flow
-   Human error in reading head values
-   Gain experience in critically evaluating data and justifying results in reports or presentations.
-8. 🌍 Connecting Laboratory Work to Real-World Applications
-Another vital learning outcome is understanding the practical importance of flow measurement techniques in real engineering contexts.
-Recognize where and why V-notch weirs are used in real life, such as:
-   Irrigation systems
-   Stormwater management
-   Sewage and wastewater treatment plants
-   Hydrological studies in streams and rivers
-   Appreciate the role of accurate flow measurement in environmental protection, water resource management, and civil infrastructure.
-10. ✍️ Report Writing and Communication Skills
-   Learn to document the experimental process, observations, and findings in a structured lab report.
-   Practice technical writing and data presentation using graphs, charts, and tables.
-   Clearly explain the objectives, methods, results, and conclusions, linking them to theoretical concepts.
-11. 🛠️ Enhancing Laboratory Safety and Teamwork
-   Understand and follow laboratory safety protocols while working with flowing water, sharp edges, or electrical instruments.
-   Learn to work in teams, distribute tasks, and collaborate .
+
+ 1. Understanding Theoretical Concepts
+     Understand the principle of flow measurement using a V-notch weir.
+
+     Learn the relationship between head of water over the notch and discharge.
+
+     Comprehend the concept of coefficient of discharge (Cd) and its importance.
+
+2. Familiarization with Apparatus
+     Identify the components of the V-notch apparatus (e.g., notch plate, stilling basin, measuring tank, point gauge).
+
+     Understand the proper setup and calibration of the experiment.
+
+3. Measurement Skills
+     Accurately measure the head over the V-notch using a point gauge.
+
+     Record volumetric flow data over time to determine actual discharge.
+
+4. Analytical Skills
+     Use the theoretical formula for discharge over a V-notch:
+
+Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
+
+ 
+where 
+𝑄
+Q is the discharge, 
+𝐶
+𝑑
+C 
+d
+​
+  is the coefficient of discharge, 
+𝜃
+θ is the notch angle, and 
+𝐻
+H is the head.
+
+Calculate both theoretical and actual discharge, and determine the coefficient of discharge (Cd) experimentally.
+
+5. Error Analysis and Interpretation
+Compare theoretical and actual discharge to understand sources of error and deviation.
+
+Interpret the impact of fluid dynamics factors (viscosity, turbulence, surface tension) on results.
+
+6. Application and Real-World Relevance
+Relate the use of V-notch weirs to real-world flow measurement in open channels and irrigation systems.
+
+Understand advantages and limitations of V-notch weirs in practical applications.
 <h4> [3. Instructional Strategy](#IS)
 1.🎯 Learning Outcome Orientation
 Begin by clearly stating the learning objectives:
