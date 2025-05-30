@@ -1,66 +1,65 @@
 ### Link your theory in here
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>V-Notch Flow Rate Experiment - Theory</title>
-    <style>
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .formula {
-            font-weight: bold;
-            color: #c0392b;
-        }
-        ul {
-            margin-left: 20px;
-        }
-    </style>
-</head>
-<body>
+~V-Notch Weir:
+A V-notch weir is a triangular-shaped notch used to measure the flow of water in open channels. It is preferred for small discharge measurements because of its high sensitivity to small changes in flow.
 
-    <h1>V-Notch Flow Rate Experiment - Theory</h1>
+~ Flow Equation:
+The theoretical discharge 
+𝑄 over a V-notch is given by:
 
-    <h2>1. Objective</h2>
-    <p>To determine the flow rate of water using a V-notch and compare it with theoretical discharge calculations.</p>
+𝑄
+=
+8
+15
+𝐶
+𝑑
+2
+𝑔
+tan
+⁡
+(
+𝜃
+2
+)
+𝐻
+5
+/
+2
+ 
+Where:
 
-    <h2>2. Introduction</h2>
-    <p>A V-notch is a triangular-shaped weir used for measuring small flow rates of liquids in open channels. The discharge over a V-notch depends on the head of liquid above the vertex of the notch. It is more sensitive than a rectangular notch, especially for low flows.</p>
+𝑄 = Discharge (m³/s)
 
-    <h2>3. Principle</h2>
-    <p>The V-notch operates on the principle that the discharge is proportional to the head of water raised to the power of 2.5. The shape causes the width of the flow area to increase with height, making it effective for small flows.</p>
+𝐶𝑑 = Discharge coefficient (dimensionless)
 
-    <h2>4. Formula for Discharge</h2>
-    <p>The theoretical discharge over a V-notch is given by the formula:</p>
-    <p class="formula">Q = (8/15) × Cd × √(2g) × tan(θ/2) × H<sup>5/2</sup></p>
+𝑔 = Acceleration due to gravity (9.81 m/s²)
 
-    <h3>Where:</h3>
-    <ul>
-        <li><strong>Q</strong> = Discharge (m³/s)</li>
-        <li><strong>Cd</strong> = Coefficient of discharge (dimensionless)</li>
-        <li><strong>g</strong> = Acceleration due to gravity (9.81 m/s²)</li>
-        <li><strong>θ</strong> = Angle of the V-notch (in radians)</li>
-        <li><strong>H</strong> = Head of water above the notch vertex (in meters)</li>
-    </ul>
+𝜃 = Angle of the notch (usually 90°)
 
-    <h2>5. Assumptions</h2>
-    <ul>
-        <li>Flow is steady and free from turbulence.</li>
-        <li>The fluid is incompressible.</li>
-        <li>The velocity of approach is negligible.</li>
-        <li>The head is measured from the vertex of the notch.</li>
-    </ul>
+𝐻 = Head of water above the notch apex (m)
 
-    <h2>6. Applications</h2>
-    <ul>
-        <li>Used in labs and field setups to measure small flows in channels.</li>
-        <li>Widely used in irrigation, sewage treatment, and environmental monitoring.</li>
-    </ul>
+For a 90° V-notch, the formula simplifies to:
 
-</body>
-</html>
+𝑄
+=
+1.38
+𝐶
+𝑑
+𝐻
+5
+/
+2
+ 
+~ Discharge Coefficient (
+𝐶𝑑
+):
+Accounts for energy losses and non-ideal flow behavior
+
+Typically ranges from 0.58 to 0.62 for a 90° V-notch
+
+Can be determined experimentally by comparing actual and theoretical discharge
+
+~ Head Measurement (H):
+Measured vertically from the apex of the notch to the free water surface
+
+Should be taken away from the notch (at least 4H upstream) to avoid surface disturbances
+
