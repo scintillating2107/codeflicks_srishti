@@ -125,6 +125,96 @@
    Ensure proper calibration and maintenance of equipment for accurate results.
 
 
+<h4> [1. Instructional Strategy](#IS)
+
+  1. Objectives
+     Understand the working principle of a V-notch weir.
+
+     Measure head over the notch and calculate flow rate.
+
+     Compare actual and theoretical discharge values.
+
+  2. Prior Knowledge
+     Basic fluid mechanics (Bernoulli’s principle, continuity).
+
+     Use of measuring instruments and unit conversions.
+
+  3. Materials
+     V-notch apparatus
+
+     Stopwatch
+
+     Measuring tank
+
+     Point gauge
+
+     Water supply
+
+4. Introduction
+Briefly explain what a V-notch is and its applications in flow measurement.
+
+State the aim and relevance of the experiment.
+
+5. Procedure
+Set up and level the apparatus.
+
+Allow steady water flow.
+
+Measure the head (H) above the notch.
+
+Collect water for a timed interval.
+
+Record volume and time to compute actual discharge.
+
+Use theoretical formula to calculate expected discharge.
+
+Repeat for varying flow rates.
+
+6. Formula Used
+𝑄
+=
+8
+15
+𝐶
+𝑑
+tan
+⁡
+(
+𝜃
+2
+)
+2
+𝑔
+𝐻
+5
+/
+2
+Q= 
+15
+8
+​
+ C 
+d
+​
+ tan( 
+2
+θ
+​
+ ) 
+2g
+​
+ H 
+5/2
+ 
+7. Observations
+Tabulate head (H), volume (V), time (t), and discharge (Qa and Qt).
+
+8. Conclusion
+Compare results and discuss possible errors.
+
+Understand the importance of discharge coefficients and calibration. 
+
+
 <h4> [4. Task & Assessment Questions](#AQ)
 
   
