@@ -3,14 +3,13 @@ To determine the flow rate of water using a V-notch weir and to verify the theor
 
 This experiment helps in:
 
-Understanding the principles of flow measurement using notches.
+~ Understanding the principles of flow measurement using notches.
 
-Determining the discharge coefficient (
-𝐶𝑑
+~ Determining the discharge coefficient (𝐶𝑑
 ​
  ) for a V-notch.
 
-Establishing the relationship 
+~ Establishing the relationship 
 Q ∝ H^5/2
  , where 
 𝑄
