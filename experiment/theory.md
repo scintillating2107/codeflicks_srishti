@@ -50,6 +50,8 @@
     <li>Measured vertically from the apex of the notch to the free water surface</li>
     <li>Should be taken away from the notch (at least 4H upstream) to avoid surface disturbances</li>
   </ul>
+  <img src="./images/WhatsApp Image 2025-05-31 at 10.48.26_bab9ffa9.jpg" alt="description" width="1000" height="900">
+
 
 </body>
 </html>
