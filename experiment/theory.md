@@ -13,7 +13,43 @@ A V-notch weir is a triangular-shaped notch used to measure the flow of water in
 The theoretical discharge 
 𝑄 over a V-notch is given by:
 
-Q = 8/15*Cd*tan(𝜃/2)*(2g)^1/2*H^5/2
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>8</mn>
+    <mn>15</mn>
+  </mfrac>
+  <mi>C</mi>
+  <mi>d</mi>
+  <mo>tan</mo>
+  <mo>(</mo>
+  <mfrac>
+    <mi>&#x03B8;</mi>
+    <mn>2</mn>
+  </mfrac>
+  <mo>)</mo>
+  <msup>
+    <mfenced>
+      <mrow>
+        <mn>2</mn>
+        <mi>g</mi>
+      </mrow>
+    </mfenced>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </msup>
+  <msup>
+    <mi>H</mi>
+    <mfrac>
+      <mn>5</mn>
+      <mn>2</mn>
+    </mfrac>
+  </msup>
+</math>
+
  
 Where:
 
