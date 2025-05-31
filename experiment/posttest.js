@@ -88,62 +88,7 @@
 /////////////// Write the MCQ below in the exactly same described format ///////////////
 
 
-  const myQuestions = [
-    {
-      question: "On increasing the radius of the steel ball to double its value the terminal velocity of the ball become box:",  ///// Write the question inside double quotes
-      answers: {
-        a: " double",                  ///// Write the option 1 inside double quotes
-        b: "four times",                  ///// Write the option 2 inside double quotes
-        c: "eight times",                  ///// Write the option 3 inside double quotes
-        d: "sixteen times"                   ///// Write the option 4 inside double quotes
-      },
-      correctAnswer: "b"                ///// Write the correct option inside double quotes
-    },
-
-    {
-      question: " On increasing density of material of the falling ball its terminal velocity:",  ///// Write the question inside double quotes
-      answers: {
-        a: "Increases",                  ///// Write the option 1 inside double quotes
-        b: "decreases",                  ///// Write the option 2 inside double quotes
-        c: "remains constant",                  ///// Write the option 3 inside double quotes
-        d: "NOT"                   ///// Write the option 4 inside double quotes
-      },
-      correctAnswer: "a"                ///// Write the correct option inside double quotes
-    },                                  ///// To add more questions, copy the section below 
-    									                  ///// this line
-
-
-    /* To add more MCQ's, copy the below section, starting from open curly braces ( { )
-        till closing curly braces comma ( }, )
-
-        and paste it below the curly braces comma ( below correct answer }, ) of above 
-        question
-
-    Copy below section
-
-    {
-      question: "This is question n?",
-      answers: {
-        a: "Option 1",
-        b: "Option 2",
-        c: "Option 3",
-        d: "Option 4"
-      },
-      correctAnswer: "c"
-    },
-
-    Copy above section
-
-    */
-
-
-
-
-  ];
-
-
-
-
+ 
 /////////////////////////////////////////////////////////////////////////////
 
 /////////////////////// Do not modify the below code ////////////////////////
