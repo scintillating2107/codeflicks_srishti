@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
@@ -14,20 +18,7 @@
   <h2>Flow Equation</h2>
   <p>The theoretical discharge <em>Q</em> over a V-notch is given by:</p>
 
-  <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mi>Q</mi>
-    <mo>=</mo>
-    <mfrac><mn>8</mn><mn>15</mn></mfrac>
-    <mi>C</mi><mi>d</mi>
-    <mo>tan</mo>
-    <mo>(</mo>
-    <mfrac><mi>&#x03B8;</mi><mn>2</mn></mfrac>
-    <mo>)</mo>
-    <msup><mfenced><mrow><mn>2</mn><mi>g</mi></mrow></mfenced>
-    <mfrac><mn>1</mn><mn>2</mn></mfrac></msup>
-    <msup><mi>H</mi><mfrac><mn>5</mn><mn>2</mn></mfrac></msup>
-  </math>
-
+  \( Q = \frac{8}{15} C_d \tan\left(\frac{\theta}{2}\right) \sqrt{2g} \cdot H^{5/2} \)
   <p><strong>Where:</strong></p>
   <ul>
     <li><strong>Q</strong> = Discharge (m³/s)</li>
