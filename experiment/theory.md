@@ -14,19 +14,9 @@
   <h2>Flow Equation</h2>
   <p>The theoretical discharge <em>Q</em> over a V-notch is given by:</p>
 
-  <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mi>Q</mi>
-    <mo>=</mo>
-    <mfrac><mn>8</mn><mn>15</mn></mfrac>
-    <mi>C</mi><mi>d</mi>
-    <mo>tan</mo>
-    <mo>(</mo>
-    <mfrac><mi>&#x03B8;</mi><mn>2</mn></mfrac>
-    <mo>)</mo>
-    <msup><mfenced><mrow><mn>2</mn><mi>g</mi></mrow></mfenced>
-    <mfrac><mn>1</mn><mn>2</mn></mfrac></msup>
-    <msup><mi>H</mi><mfrac><mn>5</mn><mn>2</mn></mfrac></msup>
-  </math>
+  <p>
+  Q = (8/15) C<sub>d</sub> tan(θ/2) √(2g) H<sup>5/2</sup>
+  </p>
 
   <p><strong>Where:</strong></p>
   <ul>
