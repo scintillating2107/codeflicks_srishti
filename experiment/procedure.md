@@ -6,4 +6,4 @@ Steps for the procedure are as follows :
 4. Record the measurements.
 5. Calculate the discharge using the formula.
 6. Repeat for different flow rates.
-<img src="./images/WhatsApp Image 2025-05-31 at 10.48.25_f130fb6d.jpg" alt="procedure" width="1000" height="1000">
+<img src="./images/WhatsApp Image 2025-05-31 at 10.48.25_f130fb6d.jpg" alt="procedure" width="1000" height="900">
