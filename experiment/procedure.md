@@ -30,17 +30,6 @@
   <li>
     <strong>Record Observations:</strong> For each trial, note the measured head (H), time of collection (t), and volume collected (V). These values will be used to compute actual and theoretical discharge.
   </li>
-  <li>
-    <strong>Calculate Flow Rates:</strong> Use the collected data to calculate:
-    <ul>
-      <li>Actual discharge: \( Q_{actual} = \frac{V}{t} \)</li>
-      <li>Theoretical discharge: \( Q_{theoretical} = \frac{8}{15} \cdot C_d \cdot \sqrt{2g} \cdot \tan(\theta/2) \cdot H^{5/2} \)</li>
-    </ul>
-    where <strong>Cd</strong> is the coefficient of discharge, <strong>g</strong> is acceleration due to gravity, <strong>θ</strong> is the notch angle, and <strong>H</strong> is the head over the notch.
-  </li>
-  <li>
-    <strong>Determine Efficiency:</strong> Calculate the coefficient of discharge (Cd) by comparing actual and theoretical discharges for each trial.
-  </li>
 </ol>
 
 <img src="./images/WhatsApp Image 2025-05-31 at 10.48.25_f130fb6d.jpg" alt="procedure" width="1000" height="900">
