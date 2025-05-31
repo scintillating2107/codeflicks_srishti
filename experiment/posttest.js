@@ -87,6 +87,75 @@
 
 /////////////// Write the MCQ below in the exactly same described format ///////////////
 
+const myQuestions = [
+  {
+    question: "1. After performing the V-notch experiment, what is the most likely reason the actual discharge is less than the theoretical discharge?",  ///// Write the question inside double quotes
+    answers: {
+      a: "The notch was too wide",                  ///// Write the option 1 inside double quotes
+      b: "Water was too cold",                  ///// Write the option 2 inside double quotes
+      c: "Energy losses due to friction and turbulence",                  ///// Write the option 3 inside double quotes
+      d: "Incorrect stopwatch reading"                   ///// Write the option 4 inside double quotes
+    },
+    correctAnswer: "c"                ///// Write the correct option inside double quotes
+  },
+
+  {
+    question: "2. Which measurement most directly impacts the accuracy of the calculated discharge in a V-notch experiment?",  ///// Write the question inside double quotes
+    answers: {
+      a: "Time",                  
+      b: "Angle of the notch",                  
+      c: "Head (H) above the notch",                  
+      d: "Notch thickness"                   
+    },
+    correctAnswer: "c"                
+  },
+
+  {
+    question: "3. What is typically plotted to verify the discharge relationship in the V-notch experiment?",  
+    answers: {
+      a: "Q vs H^0.5",                  
+      b: "H vs time",                  
+      c: "Q vs H",                  
+      d: "Q vs H^2.5"                   
+    },
+    correctAnswer: "d"                
+  },
+
+  {
+    question: "4. How is the coefficient of discharge (Cd) determined experimentally in this setup?",  
+    answers: {
+      a: "By measuring pressure at the notch",                  
+      b: "By comparing actual and theoretical discharge",                  
+      c: "By calculating velocity head",                  
+      d: "By checking water temperature"                   
+    },
+    correctAnswer: "b"                
+  },
+
+  {
+    question: "5. If a graph of Q vs H^2.5 is a straight line, what does it indicate?",  
+    answers: {
+      a: "Measurement error in head",                  
+      b: "Incorrect formula used",                  
+      c: "The experimental data follows theoretical prediction",                  
+      d: "Water flow was unsteady"                   
+    },
+    correctAnswer: "c"                
+  }
+
+  /* Add more questions below this comment using the template
+  {
+    question: "Your question here?",
+    answers: {
+      a: "Option 1",
+      b: "Option 2",
+      c: "Option 3",
+      d: "Option 4"
+    },
+    correctAnswer: "correct_option_letter"
+  },
+  */
+];
 
  
 /////////////////////////////////////////////////////////////////////////////
