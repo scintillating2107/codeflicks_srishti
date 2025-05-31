@@ -88,81 +88,88 @@
 /////////////// Write the MCQ below in the exactly same described format ///////////////
 
 
-  const myQuestions = [
-    {
-      question: "1. जिस सिद्धांत पर विशिष्ट घूर्णन के प्रयोग का आधार है वह है:",  ///// Write the question inside double quotes
-      answers: {
-        a: "ध्रुवीकृत प्रकाश ऑप्टिकली सक्रिय माध्यम से गुजरते समय दो घटकों में विभाजित हो जाता है",                  ///// Write the option 1 inside double quotes
-        b: "ध्रुवीकृत प्रकाश ऑप्टिकली सक्रिय माध्यम से गुजरते समय घुमता है",                  ///// Write the option 2 inside double quotes
-        c: "ध्रुवीकृत प्रकाश पानी से गुजरते समय विचलित हो जाता है",                  ///// Write the option 3 inside double quotes
-        d: "इनमें से कोई नहीं"                   ///// Write the option 4 inside double quotes
-      },
-      correctAnswer: "b"                ///// Write the correct option inside double quotes
+ const myQuestions = [
+  {
+    question: "1. Why is a V-notch considered more sensitive at low flow rates compared to other notches?",  ///// Write the question inside double quotes
+    answers: {
+      a: "It has a larger opening",                  ///// Write the option 1 inside double quotes
+      b: "The flow area increases rapidly with head",                  ///// Write the option 2 inside double quotes
+      c: "It reduces the velocity of flow",                  ///// Write the option 3 inside double quotes
+      d: "It is easier to manufacture"                   ///// Write the option 4 inside double quotes
     },
+    correctAnswer: "b"                ///// Write the correct option inside double quotes
+  },
 
-    {
-     question: "2. शुगर घोल की सांद्रता बढ़ाने पर ध्रुवीकृत प्रकाश का घुमाव कोण:",  ///// Write the question inside double quotes
-      answers: {
-        a: "बढ़ता है",                  ///// Write the option 1 inside double quotes
-        b: " घटता है",                  ///// Write the option 2 inside double quotes
-        c: "अपरिवर्तित रहता है",                  ///// Write the option 3 inside double quotes
-        d: "इनमें से कोई नहीं"                   ///// Write the option 4 inside double quotes
-      },
-      correctAnswer: "a"                ///// Write the correct option inside double quotes
-    },     
-    {
-      question: "3. किसी भी घोल का विशिष्ट घूर्णन किस पर निर्भर करता है:",  ///// Write the question inside double quotes
-       answers: {
-         a: "सांद्रता",                  ///// Write the option 1 inside double quotes
-         b: "नलिका की लंबाई",                  ///// Write the option 2 inside double quotes
-         c: "तापमान",                  ///// Write the option 3 inside double quotes
-         d: "इनमें से कोई नहीं"                   ///// Write the option 4 inside double quotes
-       },
-       correctAnswer: "c"                ///// Write the correct option inside double quotes
-     }, 
-     {
-      question: "4. यदि नलिका की लंबाई बढ़ाई जाए तो किसी भी घोल का विशिष्ट घूर्णन:",  ///// Write the question inside double quotes
-       answers: {
-         a: "बढ़ता है",                  ///// Write the option 1 inside double quotes
-         b: "घटता है",                  ///// Write the option 2 inside double quotes
-         c: "अपरिवर्तित रहता है",                  ///// Write the option 3 inside double quotes
-         d: "इनमें से कोई नहीं"                   ///// Write the option 4 inside double quotes
-       },
-       correctAnswer: "c"                ///// Write the correct option inside double quotes
-     },                              ///// To add more questions, copy the section below 
-    									                  ///// this line
-
-
-    /* To add more MCQ's, copy the below section, starting from open curly braces ( { )
-        till closing curly braces comma ( }, )
-
-        and paste it below the curly braces comma ( below correct answer }, ) of above 
-        question
-
-    Copy below section
-
-    {
-      question: "This is question n?",
-      answers: {
-        a: "Option 1",
-        b: "Option 2",
-        c: "Option 3",
-        d: "Option 4"
-      },
-      correctAnswer: "c"
+  {
+    question: "2. What does the angle θ represent in the V-notch discharge formula?",  ///// Write the question inside double quotes
+    answers: {
+      a: "Width of the notch",                  ///// Write the option 1 inside double quotes
+      b: "Water surface slope",                  ///// Write the option 2 inside double quotes
+      c: "Angle of the V-notch",                  ///// Write the option 3 inside double quotes
+      d: "Height of the fluid"                   ///// Write the option 4 inside double quotes
     },
+    correctAnswer: "c"                ///// Write the correct option inside double quotes
+  },
 
-    Copy above section
+  {
+    question: "3. What happens to the flow rate if the head over a 90° V-notch doubles?",  ///// Write the question inside double quotes
+    answers: {
+      a: "It doubles",                  ///// Write the option 1 inside double quotes
+      b: "It triples",                  ///// Write the option 2 inside double quotes
+      c: "It increases more than double",                  ///// Write the option 3 inside double quotes
+      d: "It stays the same"                   ///// Write the option 4 inside double quotes
+    },
+    correctAnswer: "c"                ///// Write the correct option inside double quotes
+  },
 
-    */
+  {
+    question: "4. Which property of water directly affects the theoretical discharge through a V-notch?",  ///// Write the question inside double quotes
+    answers: {
+      a: "Temperature",                  ///// Write the option 1 inside double quotes
+      b: "Surface tension",                  ///// Write the option 2 inside double quotes
+      c: "Density",                  ///// Write the option 3 inside double quotes
+      d: "Color"                   ///// Write the option 4 inside double quotes
+    },
+    correctAnswer: "c"                ///// Write the correct option inside double quotes
+  },
+
+  {
+    question: "5. What happens to the coefficient of discharge (Cd) if energy losses around the V-notch increase?",  ///// Write the question inside double quotes
+    answers: {
+      a: "It increases",                  ///// Write the option 1 inside double quotes
+      b: "It decreases",                  ///// Write the option 2 inside double quotes
+      c: "It becomes zero",                  ///// Write the option 3 inside double quotes
+      d: "It remains unchanged"                   ///// Write the option 4 inside double quotes
+    },
+    correctAnswer: "b"                ///// Write the correct option inside double quotes
+  },                              ///// To add more questions, copy the section below 
+  									                ///// this line
 
 
+  /* To add more MCQ's, copy the below section, starting from open curly braces ( { )
+      till closing curly braces comma ( }, )
 
+      and paste it below the curly braces comma ( below correct answer }, ) of above 
+      question
 
-  ];
+  Copy below section
 
+  {
+    question: "This is question n?",
+    answers: {
+      a: "Option 1",
+      b: "Option 2",
+      c: "Option 3",
+      d: "Option 4"
+    },
+    correctAnswer: "c"
+  },
 
+  Copy above section
 
+  */
+
+];
 
 /////////////////////////////////////////////////////////////////////////////
 
