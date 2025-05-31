@@ -74,6 +74,9 @@
                 <button id="helpBtn" class="bg-blue-800 hover:bg-blue-900 px-3 py-1.5 rounded-md flex items-center text-sm transition-colors duration-200">
                     <i class="fas fa-question-circle mr-1.5"></i> Help
                 </button>
+                <button id="voiceBtn" class="bg-purple-800 hover:bg-purple-900 px-3 py-1.5 rounded-md flex items-center text-sm transition-colors duration-200 ml-2">
+                    <i class="fas fa-volume-up mr-1.5"></i> Voice Guide
+                </button>
             </div>
         </div>
     </div>
@@ -356,11 +359,48 @@
         </div>
     </div>
     
+    <!-- Voice Control Panel -->
+    <div id="voicePanel" class="fixed top-4 left-4 bg-white rounded-lg shadow-lg p-4 border-2 border-purple-300 hidden z-40">
+        <div class="flex items-center justify-between mb-3">
+            <h4 class="font-semibold text-purple-800">🎤 Voice Assistant</h4>
+            <button id="closeVoicePanel" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center space-x-2">
+                <button id="playVoiceBtn" class="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-sm">
+                    <i class="fas fa-play"></i> Play
+                </button>
+                <button id="pauseVoiceBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white px-2 py-1 rounded text-sm">
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button id="stopVoiceBtn" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-sm">
+                    <i class="fas fa-stop"></i> Stop
+                </button>
+            </div>
+            <div class="flex items-center space-x-2">
+                <label class="text-sm">Speed:</label>
+                <input type="range" id="voiceSpeed" min="0.5" max="2" step="0.1" value="1" class="w-16">
+                <span id="speedValue" class="text-xs">1.0x</span>
+            </div>
+            <div class="text-xs text-gray-600">
+                <div id="voiceStatus">Ready to guide you!</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Welcome Modal -->
     <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-md p-8 text-center relative">
             <h2 class="text-2xl font-bold mb-4 text-blue-700">Welcome to the Virtual Fluid Mechanics Lab!</h2>
             <p class="mb-6 text-gray-700">This simulation lets you explore flow rate measurement using a V-notch weir. Adjust the controls, collect data, and visualize the relationship between head and discharge.<br><br><span class="font-semibold text-blue-600">Ready to begin?</span></p>
+            <div class="mb-4">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" id="enableVoice" class="form-checkbox" checked>
+                    <span class="ml-2 text-sm">🎤 Enable voice guidance</span>
+                </label>
+            </div>
             <button id="welcomeStartBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-lg font-semibold shadow">
                 Start Experiment
             </button>
@@ -707,6 +747,7 @@
                 // Initialize with current values
                 const head = hValueElement.textContent;
                 calculateDischarge(head);
+                voiceAssistant.speak(VoiceMessages.simulationStarted);
             } else {
                 setWaterAnimationPaused(true); // Pause water/molecule animation
                 startBtn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
@@ -715,7 +756,19 @@
             }
         });
         
-        addDataBtn.addEventListener('click', addDataPoint);
+        addDataBtn.addEventListener('click', () => {
+            const dataCount = dataPoints.length;
+            addDataPoint();
+            if (dataCount === 0) {
+                voiceAssistant.speak("Excellent! You've recorded your first data point. Now look at the graph below - you can see your measurement plotted. Try adjusting the head and recording more points to see how the relationship pattern develops.");
+            } else if (dataCount === 2) {
+                voiceAssistant.speak("Great progress! You now have multiple data points. Look at your graph - notice how the points are forming a curve. This shows the relationship between head and discharge rate. The curve demonstrates that discharge increases rapidly with head, following the H to the power 2.5 relationship.");
+            } else if (dataCount === 4) {
+                voiceAssistant.speak("Wonderful! You're building a comprehensive dataset. Observe your graph carefully - the curved line connecting your points shows the characteristic behavior of a V-notch weir. Higher heads produce disproportionately higher discharge rates. This non-linear relationship is fundamental to weir hydraulics.");
+            } else {
+                voiceAssistant.speak("Data point recorded successfully! Keep watching the graph as it updates. Each new point helps define the characteristic curve more precisely. Notice how the slope of the curve changes - this indicates the sensitivity of the weir to head variations.");
+            }
+        });
         
         resetBtn.addEventListener('click', resetExperiment);
         
@@ -725,6 +778,7 @@
         
         helpBtn.addEventListener('click', () => {
             helpModal.classList.remove('hidden');
+            voiceAssistant.speak(VoiceMessages.helpGuide);
         });
         
         closeHelp.addEventListener('click', () => {
@@ -772,6 +826,7 @@
             if (experimentRunning && autoCalculateCheckbox.checked) {
                 const head = hValueElement.textContent;
                 calculateDischarge(head);
+                voiceAssistant.speak(`Notch angle changed to ${angle} degrees. Observe how this affects the discharge calculation.`);
             }
         });
 
@@ -786,14 +841,19 @@
         // Show welcome modal on load and pause water
         window.addEventListener('DOMContentLoaded', () => {
             welcomeModal.classList.remove('hidden');
-            setTimeout(initMolecules, 400); // ensure molecules are created and animation loop is running
+            setTimeout(initMolecules, 400);
             setWaterAnimationPaused(true);
+            // Welcome voice message
+            setTimeout(() => {
+                voiceAssistant.speak(VoiceMessages.welcome);
+            }, 1000);
         });
 
         // On welcome modal button, show parameter modal (water still paused)
         welcomeStartBtn.addEventListener('click', () => {
             welcomeModal.classList.add('hidden');
             introModal.classList.remove('hidden');
+            voiceAssistant.speak(VoiceMessages.parameterSetup);
         });
 
         // On parameter modal button, set parameters and hide, but keep water paused
@@ -812,6 +872,7 @@
             updateVNotchAngle(parseInt(introAngle.value));
             introModal.classList.add('hidden');
             setWaterAnimationPaused(true); // keep paused until Start Simulation
+            voiceAssistant.speak(VoiceMessages.experimentReady);
         });
 
         // --- Water Animation Control and Molecule Animation ---
@@ -870,6 +931,176 @@
             }
             animateMolecules();
         }
+
+        // === Voice Assistant System ===
+        class VoiceAssistant {
+            constructor() {
+                this.synth = window.speechSynthesis;
+                this.voice = null;
+                this.isEnabled = true;
+                this.isSpeaking = false;
+                this.currentUtterance = null;
+                this.speed = 1.0;
+                this.initVoice();
+                this.setupEventListeners();
+            }
+
+            initVoice() {
+                // Wait for voices to load
+                const setVoice = () => {
+                    const voices = this.synth.getVoices();
+                    // Prefer female voices
+                    this.voice = voices.find(voice => 
+                        voice.name.toLowerCase().includes('female') ||
+                        voice.name.toLowerCase().includes('samantha') ||
+                        voice.name.toLowerCase().includes('karen') ||
+                        voice.name.toLowerCase().includes('anna') ||
+                        voice.name.toLowerCase().includes('zira') ||
+                        (voice.lang.startsWith('en') && voice.gender === 'female')
+                    ) || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+                };
+
+                if (this.synth.getVoices().length > 0) {
+                    setVoice();
+                } else {
+                    this.synth.addEventListener('voiceschanged', setVoice);
+                }
+            }
+
+            setupEventListeners() {
+                document.getElementById('voiceSpeed').addEventListener('input', (e) => {
+                    this.speed = parseFloat(e.target.value);
+                    document.getElementById('speedValue').textContent = `${this.speed}x`;
+                });
+            }
+
+            speak(text, options = {}) {
+                if (!this.isEnabled) return;
+
+                this.stop(); // Stop any current speech
+
+                this.currentUtterance = new SpeechSynthesisUtterance(text);
+                this.currentUtterance.voice = this.voice;
+                this.currentUtterance.rate = this.speed;
+                this.currentUtterance.pitch = 1.1; // Slightly higher pitch for friendliness
+                this.currentUtterance.volume = 0.8;
+
+                this.currentUtterance.onstart = () => {
+                    this.isSpeaking = true;
+                    document.getElementById('voiceStatus').textContent = 'Speaking...';
+                };
+
+                this.currentUtterance.onend = () => {
+                    this.isSpeaking = false;
+                    document.getElementById('voiceStatus').textContent = 'Ready to guide you!';
+                    if (options.callback) options.callback();
+                };
+
+                this.currentUtterance.onerror = () => {
+                    this.isSpeaking = false;
+                    document.getElementById('voiceStatus').textContent = 'Voice error occurred';
+                };
+
+                this.synth.speak(this.currentUtterance);
+            }
+
+            pause() {
+                if (this.isSpeaking) {
+                    this.synth.pause();
+                    document.getElementById('voiceStatus').textContent = 'Paused';
+                }
+            }
+
+            resume() {
+                if (this.synth.paused) {
+                    this.synth.resume();
+                    document.getElementById('voiceStatus').textContent = 'Speaking...';
+                }
+            }
+
+            stop() {
+                this.synth.cancel();
+                this.isSpeaking = false;
+                document.getElementById('voiceStatus').textContent = 'Stopped';
+            }
+
+            enable() { this.isEnabled = true; }
+            disable() { this.isEnabled = false; }
+        }
+
+        // Voice Messages Library
+        const VoiceMessages = {
+            welcome: "Welcome to the Virtual Fluid Mechanics Laboratory! I'm your voice assistant, and I'll guide you through the V-notch weir flow measurement experiment. This simulation will help you understand the relationship between water head and discharge rate. Are you ready to begin this exciting journey in hydraulic engineering?",
+            
+            parameterSetup: "Great! Now let's set up your initial experiment parameters. You can choose the starting water head between 0.1 and 0.8 meters, and select the V-notch angle from 30 to 120 degrees. These parameters will affect the flow rate through the weir. Take your time to choose values that interest you.",
+            
+            experimentReady: "Perfect! Your experiment setup is complete. You can see the V-notch weir in the channel, with water ready to flow. Notice the measurement scale on the right showing the water head, and the digital displays showing real-time values. When you're ready, click the Start Simulation button to begin the water flow.",
+            
+            simulationStarted: "Excellent! The simulation has started. Watch as the water flows horizontally through the channel and over the V-notch weir. You can see the water molecules moving, representing the actual flow. The discharge rate is calculated automatically using the V-notch weir equation.",
+            
+            adjustingParameters: "You can adjust the water head using the slider or fine-tune buttons, and change the notch angle from the dropdown. Notice how these changes affect the calculated discharge rate. This demonstrates the relationship Q equals 8 over 15 times C d times square root of 2g times tangent theta over 2 times H to the power 5 over 2.",
+            
+            recordingData: "Great! You can record data points by clicking the Record Data button. Each measurement will be added to the data table and plotted on the graph. Try taking measurements at different head values to see the characteristic curve of the V-notch weir.",
+            
+            analyzingResults: "Look at your graph! The relationship between head and discharge follows a power curve, specifically Q is proportional to H to the power 2.5. This is the fundamental characteristic of triangular weirs. The steeper the curve, the more sensitive the weir is to changes in head.",
+            
+            experimentComplete: "Congratulations! You've successfully completed the V-notch weir experiment. You've learned how to measure flow rates using a triangular weir, understand the relationship between head and discharge, and collected valuable data. This knowledge is essential in hydraulic engineering and water resource management.",
+            
+            helpGuide: "If you need help at any time, remember that you can adjust the water level with the head control slider, change the V-notch angle, start and pause the simulation, record data points, and view the relationship graph. I'm here to guide you through each step!",
+            
+            errorGuidance: "Don't worry if something doesn't seem right. You can always reset the experiment and start over. Make sure to set reasonable parameter values and take multiple measurements for better understanding of the flow behavior."
+        };
+
+        // Initialize Voice Assistant
+        const voiceAssistant = new VoiceAssistant();
+
+        // Voice Control Event Listeners
+        document.getElementById('voiceBtn').addEventListener('click', () => {
+            document.getElementById('voicePanel').classList.toggle('hidden');
+        });
+
+        document.getElementById('closeVoicePanel').addEventListener('click', () => {
+            document.getElementById('voicePanel').classList.add('hidden');
+        });
+
+        document.getElementById('playVoiceBtn').addEventListener('click', () => {
+            voiceAssistant.resume();
+        });
+
+        document.getElementById('pauseVoiceBtn').addEventListener('click', () => {
+            voiceAssistant.pause();
+        });
+
+        document.getElementById('stopVoiceBtn').addEventListener('click', () => {
+            voiceAssistant.stop();
+        });
+
+        document.getElementById('enableVoice').addEventListener('change', (e) => {
+            if (e.target.checked) {
+                voiceAssistant.enable();
+            } else {
+                voiceAssistant.disable();
+                voiceAssistant.stop();
+            }
+        });
+
+        // Add voice guidance for parameter changes
+        headControlSlider.addEventListener('change', () => {
+            if (experimentRunning) {
+                voiceAssistant.speak("Head adjusted. Notice how the discharge rate changes with the new water level.");
+            }
+        });
+
+        notchAngleSelect.addEventListener('change', () => {
+            const angle = parseInt(notchAngleSelect.value);
+            displayAngle.textContent = `${angle}°`;
+            updateVNotchAngle(angle);
+            if (experimentRunning && autoCalculateCheckbox.checked) {
+                const head = hValueElement.textContent;
+                calculateDischarge(head);
+                voiceAssistant.speak(`Notch angle changed to ${angle} degrees. Observe how this affects the discharge calculation.`);
+            }
+        });
     </script>
 </body>
 </html>
