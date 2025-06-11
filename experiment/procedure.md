@@ -1,4 +1,4 @@
-<h2>Procedure</h2>
+
 <ol>
   <li>
     <strong>Preparation:</strong> Ensure that the experimental setup is clean and all valves are properly connected. The collecting tank must be empty before beginning the experiment.
