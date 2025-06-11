@@ -89,7 +89,7 @@
 
 const myQuestions = [
   {
-    question: "1. After performing the V-notch experiment, what is the most likely reason the actual discharge is less than the theoretical discharge?",  ///// Write the question inside double quotes
+    question: " After performing the V-notch experiment, what is the most likely reason the actual discharge is less than the theoretical discharge?",  ///// Write the question inside double quotes
     answers: {
       a: "The notch was too wide",                  ///// Write the option 1 inside double quotes
       b: "Water was too cold",                  ///// Write the option 2 inside double quotes
@@ -100,7 +100,7 @@ const myQuestions = [
   },
 
   {
-    question: "2. Which measurement most directly impacts the accuracy of the calculated discharge in a V-notch experiment?",  ///// Write the question inside double quotes
+    question: "Which measurement most directly impacts the accuracy of the calculated discharge in a V-notch experiment?",  ///// Write the question inside double quotes
     answers: {
       a: "Time",                  
       b: "Angle of the notch",                  
@@ -111,7 +111,7 @@ const myQuestions = [
   },
 
   {
-    question: "3. What is typically plotted to verify the discharge relationship in the V-notch experiment?",  
+    question: " What is typically plotted to verify the discharge relationship in the V-notch experiment?",  
     answers: {
       a: "Q vs H^0.5",                  
       b: "H vs time",                  
@@ -122,7 +122,7 @@ const myQuestions = [
   },
 
   {
-    question: "4. How is the coefficient of discharge (Cd) determined experimentally in this setup?",  
+    question: "How is the coefficient of discharge (Cd) determined experimentally in this setup?",  
     answers: {
       a: "By measuring pressure at the notch",                  
       b: "By comparing actual and theoretical discharge",                  
@@ -133,7 +133,7 @@ const myQuestions = [
   },
 
   {
-    question: "5. If a graph of Q vs H^2.5 is a straight line, what does it indicate?",  
+    question: " If a graph of Q vs H^2.5 is a straight line, what does it indicate?",  
     answers: {
       a: "Measurement error in head",                  
       b: "Incorrect formula used",                  
