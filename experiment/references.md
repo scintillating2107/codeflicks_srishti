@@ -1,4 +1,4 @@
-<h3>References</h3>
+
 <ul>
   <li><a href="https://nptel.ac.in/content/storage2/courses/105103021/module5/lecture23.pdf" target="_blank">
     NPTEL - Flow Measurement Using Notches (PDF)
