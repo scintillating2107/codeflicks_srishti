@@ -90,7 +90,7 @@
 
  const myQuestions = [
   {
-    question: "1. Why is a V-notch considered more sensitive at low flow rates compared to other notches?",  ///// Write the question inside double quotes
+    question: " Why is a V-notch considered more sensitive at low flow rates compared to other notches?",  ///// Write the question inside double quotes
     answers: {
       a: "It has a larger opening",                  ///// Write the option 1 inside double quotes
       b: "The flow area increases rapidly with head",                  ///// Write the option 2 inside double quotes
@@ -101,7 +101,7 @@
   },
 
   {
-    question: "2. What does the angle θ represent in the V-notch discharge formula?",  ///// Write the question inside double quotes
+    question: " What does the angle θ represent in the V-notch discharge formula?",  ///// Write the question inside double quotes
     answers: {
       a: "Width of the notch",                  ///// Write the option 1 inside double quotes
       b: "Water surface slope",                  ///// Write the option 2 inside double quotes
@@ -112,7 +112,7 @@
   },
 
   {
-    question: "3. What happens to the flow rate if the head over a 90° V-notch doubles?",  ///// Write the question inside double quotes
+    question: " What happens to the flow rate if the head over a 90° V-notch doubles?",  ///// Write the question inside double quotes
     answers: {
       a: "It doubles",                  ///// Write the option 1 inside double quotes
       b: "It triples",                  ///// Write the option 2 inside double quotes
@@ -123,7 +123,7 @@
   },
 
   {
-    question: "4. Which property of water directly affects the theoretical discharge through a V-notch?",  ///// Write the question inside double quotes
+    question: " Which property of water directly affects the theoretical discharge through a V-notch?",  ///// Write the question inside double quotes
     answers: {
       a: "Temperature",                  ///// Write the option 1 inside double quotes
       b: "Surface tension",                  ///// Write the option 2 inside double quotes
@@ -134,7 +134,7 @@
   },
 
   {
-    question: "5. What happens to the coefficient of discharge (Cd) if energy losses around the V-notch increase?",  ///// Write the question inside double quotes
+    question: " What happens to the coefficient of discharge (Cd) if energy losses around the V-notch increase?",  ///// Write the question inside double quotes
     answers: {
       a: "It increases",                  ///// Write the option 1 inside double quotes
       b: "It decreases",                  ///// Write the option 2 inside double quotes
